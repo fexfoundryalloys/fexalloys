@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FeX Alloys – ISO 9001:2015 certified manufacturer of high-grade foundry alloys. 25,000 MT/year capacity, supplying 35+ countries worldwide." />
+  <title>FeX Alloys — Precision Foundry Alloys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET ───────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; overflow-x: hidden; font-size: 16px; }
+    body  { font-family: 'Inter', sans-serif; color: #1b1c1c;
+            background: #fcf9f8; overflow-x: hidden;
+            -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; }
+    a     { text-decoration: none; color: inherit; }
+    img, svg { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ── CONTAINER ───────────────────────────── */
+    .w { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.125rem; }
+    @media (min-width: 600px)  { .w { padding: 0 1.5rem; } }
+    @media (min-width: 900px)  { .w { padding: 0 2.5rem; } }
+    @media (min-width: 1100px) { .w { padding: 0 3rem;   } }
+
+    /* ── SECTION SPACING ─────────────────────── */
+    .sec      { padding: 3.25rem 0; }
+    .sec-lg   { padding: 4rem 0; }
+    @media (min-width: 768px) {
+      .sec    { padding: 5rem 0; }
+      .sec-lg { padding: 6.5rem 0; }
+    }
+
+    /* ── 2-COL LAYOUT ────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr; gap: 2.25rem; }
+    @media (min-width: 900px) {
+      .two-col { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    }
+
+    /* ── TYPOGRAPHY ──────────────────────────── */
+    .d  { font-family: 'Montserrat', sans-serif; }
+    .h1 { font-family: 'Montserrat', sans-serif; font-weight: 800; color: #fff;
+          font-size: clamp(1.75rem, 5.5vw, 3.6rem); line-height: 1.1; letter-spacing: -.025em; }
+    .h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #1A2A4A;
+          font-size: clamp(1.45rem, 3.5vw, 2.5rem); line-height: 1.2; }
+    .h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #1A2A4A;
+          font-size: 1rem; line-height: 1.35; }
+    .lead { font-size: 0.975rem; line-height: 1.75; color: #556070; }
+    .lbl  { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+    .bar  { width: 52px; height: 4px; background: #C0202A; border-radius: 2px;
+            margin: 0.8rem 0 1.4rem; }
+    .bar-c { margin-left: auto; margin-right: auto; }
+
+    /* ── BUTTONS ─────────────────────────────── */
+    .btn-r {
+      display: block; width: 100%; padding: 0.95rem 1.75rem; text-align: center;
+      background: #C0202A; color: #fff; border: 2px solid #C0202A;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+      transition: background .18s, color .18s, transform .1s;
+    }
+    .btn-r:hover  { background: #a81c25; border-color: #a81c25; }
+    .btn-r:active { transform: scale(.97); }
+    .btn-o {
+      display: block; width: 100%; padding: 0.95rem 1.75rem; text-align: center;
+      background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+      transition: background .18s, border-color .18s, transform .1s;
+    }
+    .btn-o:hover  { background: rgba(255,255,255,.08); border-color: #fff; }
+    .btn-o:active { transform: scale(.97); }
+    .btn-w {
+      display: inline-block; padding: 0.95rem 2rem; text-align: center;
+      background: #fff; color: #C0202A; border: none;
+      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+      transition: background .18s, transform .1s; white-space: nowrap;
+      width: 100%;
+    }
+    .btn-w:hover  { background: #f1f5f9; }
+    .btn-w:active { transform: scale(.97); }
+    @media (min-width: 520px) {
+      .btn-r, .btn-o { width: auto; display: inline-block; }
+      .btn-w { width: auto; }
+    }
+    .btn-row { display: flex; flex-direction: column; gap: 0.75rem; }
+    @media (min-width: 520px) { .btn-row { flex-direction: row; flex-wrap: wrap; } }
+
+    /* ── ARROW LINK ──────────────────────────── */
+    .al { display: inline-flex; align-items: center; gap: 5px; color: #C0202A;
+          font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+          transition: color .18s; }
+    .al svg { transition: transform .18s; flex-shrink: 0; }
+    .al:hover { color: #1A2A4A; }
+    .al:hover svg { transform: translateX(4px); }
+
+    /* ═══════════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════════ */
+    #nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 200;
+      background: #fff; border-bottom: 1px solid #e8e4e3;
+      transition: box-shadow .2s;
+    }
+    #nav.scrolled { box-shadow: 0 2px 18px rgba(0,0,0,.12); }
+    #nav-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; max-width: 1280px; margin: 0 auto; padding: 0 1.125rem;
+    }
+    @media (min-width: 600px)  { #nav-bar { padding: 0 1.5rem; } }
+    @media (min-width: 900px)  { #nav-bar { height: 72px; padding: 0 2.5rem; } }
+    @media (min-width: 1100px) { #nav-bar { padding: 0 3rem; } }
+
+    .logo { display: flex; align-items: center; gap: 9px; }
+    .logo-box {
+      width: 32px; height: 32px; border-radius: 4px; background: #C0202A;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-box span { font-family: 'Montserrat', sans-serif; font-weight: 800;
+                     font-size: 0.65rem; color: #fff; letter-spacing: .02em; }
+    .logo-name { font-family: 'Montserrat', sans-serif; font-weight: 800;
+                 font-size: 1.15rem; color: #031534; letter-spacing: -.025em; }
+
+    #desk-links { display: none; }
+    #desk-cta   { display: none; }
+    @media (min-width: 1024px) {
+      #desk-links { display: flex; align-items: center; gap: 2px; }
+      #desk-cta   { display: block; }
+    }
+    .nl {
+      font-size: 0.67rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: #031534; padding: 0.45rem 0.7rem; transition: color .15s; border-radius: 2px;
+    }
+    .nl:hover  { color: #C0202A; }
+    .nl.on     { color: #C0202A; }
+    .nl-cta {
+      background: #C0202A; color: #fff; padding: 0.65rem 1.3rem;
+      font-size: 0.67rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: background .15s; border-radius: 1px;
+    }
+    .nl-cta:hover { background: #a81c25; }
+
+    /* hamburger */
+    #hbg {
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; background: none; border: none;
+      color: #031534; flex-shrink: 0;
+    }
+    @media (min-width: 1024px) { #hbg { display: none; } }
+
+    /* drawer */
+    #drawer {
+      display: none; position: absolute; top: 100%; left: 0; width: 100%;
+      background: #fff; border-bottom: 1px solid #e8e4e3;
+      box-shadow: 0 10px 36px rgba(0,0,0,.13); z-index: 199;
+    }
+    #drawer.open { display: block; }
+    .dr-inner { max-width: 1280px; margin: 0 auto;
+                padding: 0.75rem 1.125rem 1.25rem; }
+    @media (min-width: 600px) { .dr-inner { padding: 0.75rem 1.5rem 1.25rem; } }
+    .dl {
+      display: block; padding: 0.825rem 0;
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: #031534; border-bottom: 1px solid #f3f0ef; transition: color .15s;
+    }
+    .dl.on { color: #C0202A; }
+    .dl:hover { color: #C0202A; }
+    .dl-cta {
+      display: block; width: 100%; margin-top: 1rem; padding: 0.95rem;
+      background: #C0202A; color: #fff; text-align: center; border-radius: 1px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+      transition: background .15s;
+    }
+    .dl-cta:hover { background: #a81c25; }
+
+    #spc { height: 60px; }
+    @media (min-width: 900px) { #spc { height: 72px; } }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    #hero {
+      background: #1A2A4A; position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding: 3.5rem 0 3rem;
+      min-height: 88vh;
+    }
+    @media (min-width: 768px) { #hero { min-height: 78vh; padding: 4.5rem 0; } }
+    .hero-dots {
+      position: absolute; inset: 0; pointer-events: none; opacity: .09;
+      background-image: radial-gradient(#fff 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .hero-grid {
+      position: relative; z-index: 1; width: 100%; max-width: 1280px;
+      margin: 0 auto; padding: 0 1.125rem;
+    }
+    @media (min-width: 600px)  { .hero-grid { padding: 0 1.5rem; } }
+    @media (min-width: 900px)  { .hero-grid { padding: 0 2.5rem; } }
+    @media (min-width: 1024px) {
+      .hero-grid { display: grid; grid-template-columns: 1fr 1fr;
+                   gap: 3rem; align-items: center; padding: 0 3rem; }
+    }
+    .hero-text { display: flex; flex-direction: column; gap: 1.35rem; }
+    .hero-badge {
+      display: inline-block; padding: 0.38rem 0.8rem; border-radius: 2px;
+      background: rgba(192,32,42,.18); color: #ffb0b0;
+      border: 1px solid rgba(192,32,42,.35);
+      font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      width: fit-content;
+    }
+    .hero-sub {
+      font-size: clamp(0.875rem, 2vw, 1rem); color: #b8c8de; line-height: 1.6; font-weight: 300;
+      padding-left: 1rem; border-left: 3px solid #C0202A; max-width: 460px;
+    }
+    /* Mobile quick stats (hidden on desktop) */
+    .m-stats { display: flex; gap: 0; margin-top: 0.25rem; }
+    .m-stat  { flex: 1; }
+    .m-stat + .m-stat { border-left: 1px solid rgba(255,255,255,.18); padding-left: 1.1rem; }
+    .m-sv { font-family: 'Montserrat', sans-serif; font-weight: 800; color: #fff;
+            font-size: 1.1rem; line-height: 1; }
+    .m-sl { font-size: 0.6rem; color: #94a3b8; letter-spacing: 0.08em;
+            text-transform: uppercase; margin-top: 4px; }
+    @media (min-width: 1024px) { .m-stats { display: none; } }
+    /* Hero illustration */
+    .hero-panel {
+      display: none; border: 1px solid rgba(255,255,255,.18); border-radius: 4px;
+      padding: 6px; background: rgba(10,18,35,.5);
+      box-shadow: 0 24px 64px rgba(0,0,0,.45);
+    }
+    @media (min-width: 1024px) { .hero-panel { display: block; } }
+
+    /* ═══════════════════════════════════════════
+       STATS BAR
+    ═══════════════════════════════════════════ */
+    #stats { background: #031534; border-top: 1px solid rgba(255,255,255,.08); }
+    .stats-g {
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 768px) { .stats-g { grid-template-columns: repeat(4,1fr); } }
+    .stat {
+      padding: 1.5rem 1rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.1);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .stat:nth-child(2n)       { border-right: none; }
+    .stat:nth-last-child(-n+2){ border-bottom: none; }
+    @media (min-width: 768px) {
+      .stat               { border-bottom: none; border-right: 1px solid rgba(255,255,255,.12); }
+      .stat:nth-child(2n) { border-right: 1px solid rgba(255,255,255,.12); }
+      .stat:last-child    { border-right: none; }
+    }
+    .sv { font-family: 'Montserrat', sans-serif; font-weight: 800; color: #fff;
+          font-size: clamp(1.05rem, 3.2vw, 1.85rem); display: block; margin-bottom: 5px; }
+    .sl { font-size: 0.63rem; letter-spacing: 0.09em; text-transform: uppercase;
+          color: #7b92ae; font-weight: 600; }
+
+    /* ═══════════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════════ */
+    .about-img {
+      border: 1px solid #e5e2e1; background: #f6f3f2; border-radius: 4px;
+      padding: 8px; overflow: hidden;
+    }
+    .about-img img {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      filter: grayscale(100%); transition: filter .7s ease;
+      display: block;
+    }
+    .about-img:hover img { filter: grayscale(0%); }
+    /* Fallback SVG if image fails */
+    .about-img svg { width: 100%; }
+
+    /* ═══════════════════════════════════════════
+       PRODUCTS
+    ═══════════════════════════════════════════ */
+    .prod-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.1rem;
+    }
+    @media (min-width: 540px)  { .prod-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .prod-grid { grid-template-columns: repeat(3,1fr); gap: 1.5rem; } }
+
+    .pc {
+      background: #fff; border: 1px solid #ebe8e7; border-radius: 5px;
+      padding: 1.5rem 1.25rem; display: flex; flex-direction: column;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    @media (hover:hover) {
+      .pc:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(3,21,52,.1); }
+    }
+    .p-icon {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: #f1f5f9; border: 3px solid #e2e8f0;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.1rem;
+    }
+    .pc h3   { text-align: center; margin-bottom: 0.5rem; }
+    .pc p    { text-align: center; font-size: 0.855rem; color: #64748b;
+               line-height: 1.6; flex: 1; margin-bottom: 1rem; }
+    .pc .al  { justify-content: center; margin-top: auto; }
+
+    /* ═══════════════════════════════════════════
+       FEATURES / WHY US
+    ═══════════════════════════════════════════ */
+    .feat-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    @media (min-width: 1024px) { .feat-grid { grid-template-columns: repeat(4,1fr); gap: 1.5rem; } }
+
+    .fc {
+      background: #f6f3f2; border-radius: 5px; padding: 1.25rem 1rem;
+      display: flex; flex-direction: column; gap: 0.75rem; align-items: center; text-align: center;
+    }
+    .fi {
+      width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ═══════════════════════════════════════════
+       QUALITY
+    ═══════════════════════════════════════════ */
+    .ck {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.9rem 1rem; background: #fff; border-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .ck + .ck { margin-top: 0.6rem; }
+    .cert-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    }
+    @media (min-width: 480px) { .cert-grid { gap: 1.1rem; } }
+    .crt {
+      background: #fff; border: 1px solid #e5e2e1; border-radius: 5px;
+      padding: 1rem; text-align: center;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.5rem; min-height: 115px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .crt .cn { font-family:'Montserrat',sans-serif; font-weight:800;
+               font-size: clamp(.68rem,.7vw+.5rem,.8rem); color:#031534; letter-spacing:.03em; }
+    .crt .cs { font-size: .7rem; color: #94a3b8; }
+
+    /* ═══════════════════════════════════════════
+       GLOBAL
+    ═══════════════════════════════════════════ */
+    #global {
+      background: #1A2A4A; overflow: hidden; position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 4rem 0; min-height: 300px;
+    }
+    @media (min-width: 768px) { #global { min-height: 380px; padding: 5.5rem 0; } }
+    .g-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top,#1A2A4A 0%,transparent 55%,rgba(26,42,74,.7) 100%);
+    }
+    .g-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 680px; padding: 0 1.25rem; width: 100%;
+    }
+    .g-inner h2 {
+      font-family: 'Montserrat', sans-serif; font-weight: 800; color: #fff;
+      font-size: clamp(1.35rem, 4.5vw, 2.75rem); line-height: 1.2; margin-bottom: 1rem;
+    }
+    .g-inner p {
+      font-size: clamp(.875rem,1.5vw,1rem); color: #b8c8de; line-height: 1.7;
+      margin-bottom: 1.75rem; font-weight: 300;
+    }
+
+    /* Country pills */
+    .country-pills {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+      margin-bottom: 1.75rem;
+    }
+    .cpill {
+      padding: .3rem .75rem; border-radius: 20px;
+      font-size: .65rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: rgba(255,255,255,.1); color: #c8d8e8; border: 1px solid rgba(255,255,255,.2);
+    }
+
+    /* ═══════════════════════════════════════════
+       CTA STRIP
+    ═══════════════════════════════════════════ */
+    #cta { background: #C0202A; padding: 2.5rem 0; }
+    .cta-in {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1.25rem; text-align: center;
+    }
+    @media (min-width: 640px) {
+      .cta-in { flex-direction: row; justify-content: space-between; text-align: left; }
+    }
+    .cta-in h2 {
+      font-family: 'Montserrat', sans-serif; font-weight: 700; color: #fff;
+      font-size: clamp(1rem, 2.5vw, 1.35rem); line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    #footer { background: #031534; padding: 3rem 0 1.5rem; }
+    .fg {
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
+    }
+    @media (min-width: 560px)  { .fg { grid-template-columns: 1fr 1fr; gap: 2rem 2.5rem; } }
+    @media (min-width: 1024px) { .fg { grid-template-columns: 1.5fr 1fr 1fr 1.3fr; } }
+
+    .fh { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #fff;
+          font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+          margin-bottom: .875rem; }
+    .fl { display: block; font-size: .875rem; color: #7b92ae;
+          padding: .3rem 0; transition: color .15s; }
+    .fl:hover { color: #e2e8f0; }
+    .fc-row { display: flex; align-items: flex-start; gap: .6rem;
+              font-size: .82rem; color: #7b92ae; margin-bottom: .625rem; line-height: 1.55; }
+    hr.fd { border: none; border-top: 1px solid rgba(255,255,255,.1);
+            margin: 2rem 0 1.5rem; }
+    .fb { display: flex; flex-direction: column; gap: .4rem; text-align: center; }
+    @media (min-width: 640px) { .fb { flex-direction: row; justify-content: space-between; text-align: left; } }
+    .fb p { font-size: .75rem; color: #475569; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav id="nav">
+  <div id="nav-bar">
+
+    <!-- Logo -->
+    <a href="#hero" class="logo">
+      <div class="logo-box"><span>FeX</span></div>
+      <span class="logo-name">FeX Alloys</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <div id="desk-links">
+      <a href="#hero"     class="nl on">Home</a>
+      <a href="#about"    class="nl">About</a>
+      <a href="#products" class="nl">Products</a>
+      <a href="#infra"    class="nl">Infrastructure</a>
+      <a href="#quality"  class="nl">Quality</a>
+      <a href="#global"   class="nl">Global Presence</a>
+    </div>
+
+    <div id="desk-cta">
+      <a href="#cta" class="nl-cta">Enquire Now</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hbg" onclick="openMenu()" aria-label="Open menu" aria-expanded="false">
+      <svg id="ico-m" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+      </svg>
+      <svg id="ico-x" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="display:none;">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="drawer" role="navigation" aria-label="Mobile navigation">
+    <div class="dr-inner">
+      <a href="#hero"     class="dl on" onclick="closeMenu()">Home</a>
+      <a href="#about"    class="dl"    onclick="closeMenu()">About</a>
+      <a href="#products" class="dl"    onclick="closeMenu()">Products</a>
+      <a href="#infra"    class="dl"    onclick="closeMenu()">Infrastructure</a>
+      <a href="#quality"  class="dl"    onclick="closeMenu()">Quality</a>
+      <a href="#global"   class="dl"    onclick="closeMenu()">Global Presence</a>
+      <a href="#cta"      class="dl-cta" onclick="closeMenu()">Enquire Now</a>
+    </div>
+  </div>
+</nav>
+<div id="spc"></div>
+
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-dots"></div>
+
+  <div class="hero-grid">
+    <!-- Text -->
+    <div class="hero-text">
+      <span class="hero-badge">ISO 9001:2015 Certified Manufacturer</span>
+
+      <h1 class="h1">Precision Foundry Alloys for a Stronger World</h1>
+
+      <p class="hero-sub">
+        High-grade foundry alloys engineered for structural integrity — trusted by foundries across 35+ countries.
+      </p>
+
+      <div class="btn-row">
+        <a href="#products" class="btn-r">Explore Products</a>
+        <a href="#cta"      class="btn-o">Enquire Now</a>
+      </div>
+
+      <!-- Mobile stats strip -->
+      <div class="m-stats">
+        <div class="m-stat">
+          <div class="m-sv">25K MT</div>
+          <div class="m-sl">Capacity / Year</div>
+        </div>
+        <div class="m-stat">
+          <div class="m-sv">35+</div>
+          <div class="m-sl">Countries</div>
+        </div>
+        <div class="m-stat">
+          <div class="m-sv">2008</div>
+          <div class="m-sl">Est.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop illustration -->
+    <div class="hero-panel">
+      <svg viewBox="0 0 640 358" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:2px;">
+        <!-- Background -->
+        <rect width="640" height="358" fill="#0b1a30"/>
+        <rect y="268" width="640" height="90" fill="#070f1e"/>
+        <!-- Buildings -->
+        <rect x="40"  y="185" width="55"  height="83"  fill="#142340" rx="1"/>
+        <rect x="105" y="155" width="70"  height="113" fill="#142340" rx="1"/>
+        <rect x="185" y="115" width="90"  height="153" fill="#172843" rx="1"/>
+        <rect x="285" y="100" width="110" height="168" fill="#172843" rx="1"/>
+        <rect x="405" y="138" width="75"  height="130" fill="#142340" rx="1"/>
+        <rect x="490" y="168" width="85"  height="100" fill="#142340" rx="1"/>
+        <!-- Windows grid -->
+        <rect x="50"  y="200" width="12" height="10" fill="#1e3a5f" rx="1"/>
+        <rect x="70"  y="200" width="12" height="10" fill="#1e3a5f" rx="1"/>
+        <rect x="115" y="170" width="14" height="12" fill="#1e3a5f" rx="1"/>
+        <rect x="140" y="170" width="14" height="12" fill="#1e3a5f" rx="1"/>
+        <rect x="115" y="195" width="14" height="12" fill="#1e3a5f" rx="1"/>
+        <rect x="197" y="130" width="15" height="13" fill="#1e3a5f" rx="1"/>
+        <rect x="222" y="130" width="15" height="13" fill="#1e3a5f" rx="1"/>
+        <rect x="247" y="130" width="15" height="13" fill="#1e3a5f" rx="1"/>
+        <rect x="197" y="158" width="15" height="13" fill="#1e3a5f" rx="1"/>
+        <rect x="222" y="158" width="15" height="13" fill="#1e3a5f" rx="1"/>
+        <rect x="297" y="118" width="16" height="14" fill="#1e3a5f" rx="1"/>
+        <rect x="323" y="118" width="16" height="14" fill="#1e3a5f" rx="1"/>
+        <rect x="349" y="118" width="16" height="14" fill="#1e3a5f" rx="1"/>
+        <rect x="297" y="146" width="16" height="14" fill="#1e3a5f" rx="1"/>
+        <rect x="323" y="146" width="16" height="14" fill="#1e3a5f" rx="1"/>
+        <!-- Furnace glow -->
+        <ellipse cx="340" cy="268" rx="120" ry="32" fill="#C0202A" opacity=".2"/>
+        <ellipse cx="340" cy="268" rx="70"  ry="20" fill="#e04800" opacity=".3"/>
+        <ellipse cx="340" cy="266" rx="38"  ry="14" fill="#ff7700" opacity=".55"/>
+        <circle  cx="340" cy="262" r="18"   fill="#ffaa00" opacity=".4"/>
+        <!-- Smoke plumes -->
+        <circle cx="320" cy="225" r="9"  fill="#2a3f5f" opacity=".6"/>
+        <circle cx="345" cy="205" r="13" fill="#2a3f5f" opacity=".45"/>
+        <circle cx="360" cy="185" r="17" fill="#2a3f5f" opacity=".3"/>
+        <circle cx="370" cy="165" r="20" fill="#2a3f5f" opacity=".2"/>
+        <!-- Dot grid overlay -->
+        <pattern id="dp" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#fff" opacity=".06"/>
+        </pattern>
+        <rect width="640" height="358" fill="url(#dp)"/>
+        <!-- Label -->
+        <text x="320" y="342" text-anchor="middle"
+              font-family="Montserrat,sans-serif" font-size="9.5" fill="#4a6080"
+              font-weight="700" letter-spacing="3.5">FEX ALLOYS — MANUFACTURING FACILITY</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════════ -->
+<section id="stats">
+  <div class="w">
+    <div class="stats-g">
+      <div class="stat">
+        <span class="sv">2008</span>
+        <span class="sl">Est. Year</span>
+      </div>
+      <div class="stat">
+        <span class="sv">25,000 MT</span>
+        <span class="sl">Annual Capacity</span>
+      </div>
+      <div class="stat">
+        <span class="sv">35+</span>
+        <span class="sl">Countries Served</span>
+      </div>
+      <div class="stat">
+        <span class="sv">ISO 9001</span>
+        <span class="sl">Certified Quality</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
+<section id="about" class="sec-lg" style="background:#fff;">
+  <div class="w">
+    <div class="two-col">
+
+      <div>
+        <p class="lbl" style="color:#C0202A;margin-bottom:.5rem;">Who We Are</p>
+        <h2 class="h2">Uncompromising Quality in Metallurgy</h2>
+        <div class="bar"></div>
+        <p class="lead" style="margin-bottom:1rem;">
+          FeX Alloys stands at the forefront of metallurgical innovation. We specialize in the precise formulation and production of high-grade foundry alloys, ensuring structural integrity and performance in critical industrial applications worldwide.
+        </p>
+        <p class="lead" style="margin-bottom:1.5rem; font-size:.875rem; font-style:italic; color:#94a3b8;">
+          Our advanced induction platforms refine trace metallic elements down to decimal deviations, guaranteeing batch-to-batch consistency.
+        </p>
+        <a href="#products" class="al">
+          Explore Our Products
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="about-img">
+        <!-- Facility illustration fallback (shows if image blocked) -->
+        <svg viewBox="0 0 640 357" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;aspect-ratio:16/9;background:#d0ccca;">
+          <rect width="640" height="357" fill="#c0bbb8"/>
+          <rect y="220" width="640" height="137" fill="#a8a3a0"/>
+          <rect x="30"  y="125" width="130" height="95"  fill="#888480" rx="2"/>
+          <rect x="45"  y="108" width="100" height="22"  fill="#888480" rx="1"/>
+          <rect x="55"  y="90"  width="80"  height="22"  fill="#888480" rx="1"/>
+          <rect x="175" y="90"  width="195" height="130" fill="#968f8c" rx="2"/>
+          <rect x="192" y="72"  width="162" height="22"  fill="#968f8c" rx="1"/>
+          <rect x="380" y="135" width="120" height="85"  fill="#888480" rx="2"/>
+          <rect x="512" y="150" width="96"  height="70"  fill="#888480" rx="2"/>
+          <!-- Windows -->
+          <rect x="52"  y="140" width="20" height="18" fill="#c0bbb8" rx="1" opacity=".7"/>
+          <rect x="82"  y="140" width="20" height="18" fill="#c0bbb8" rx="1" opacity=".7"/>
+          <rect x="112" y="140" width="20" height="18" fill="#c0bbb8" rx="1" opacity=".7"/>
+          <rect x="195" y="108" width="22" height="20" fill="#b0abaa" rx="1" opacity=".7"/>
+          <rect x="232" y="108" width="22" height="20" fill="#b0abaa" rx="1" opacity=".7"/>
+          <rect x="269" y="108" width="22" height="20" fill="#b0abaa" rx="1" opacity=".7"/>
+          <rect x="306" y="108" width="22" height="20" fill="#b0abaa" rx="1" opacity=".7"/>
+          <rect x="195" y="145" width="22" height="20" fill="#b0abaa" rx="1" opacity=".7"/>
+          <rect x="232" y="145" width="22" height="20" fill="#b0abaa" rx="1" opacity=".7"/>
+          <!-- Sky gradient -->
+          <defs>
+            <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#d8d4d2"/>
+              <stop offset="100%" stop-color="#c0bbb8" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="120" fill="url(#sk)"/>
+          <text x="320" y="335" text-anchor="middle"
+                font-family="Montserrat,sans-serif" font-size="10" fill="#888480"
+                font-weight="700" letter-spacing="3">FEX ALLOYS MANUFACTURING FACILITY — EST. 2008</text>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PRODUCTS
+══════════════════════════════════════════ -->
+<section id="products" class="sec-lg" style="background:#f6f3f2;">
+  <div class="w">
+
+    <div style="text-align:center; margin-bottom:2.75rem;">
+      <h2 class="h2">Our Product Range</h2>
+      <div class="bar bar-c"></div>
+      <p class="lead" style="max-width:540px;margin:0 auto;font-size:.9rem;">
+        Engineered foundry alloys crafted under strict induction furnace environments for consistent chemical composition and superior metallurgical performance.
+      </p>
+    </div>
+
+    <div class="prod-grid">
+
+      <!-- Ferro Silicon Magnesium -->
+      <div class="pc">
+        <div class="p-icon">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#031534" opacity=".07"/>
+            <path d="M24 10 L36 17 L36 31 L24 38 L12 31 L12 17 Z" stroke="#1A2A4A" stroke-width="2" fill="none"/>
+            <circle cx="24" cy="24" r="5" fill="#C0202A"/>
+            <line x1="24" y1="10" x2="24" y2="19" stroke="#1A2A4A" stroke-width="1.5"/>
+            <line x1="24" y1="29" x2="24" y2="38" stroke="#1A2A4A" stroke-width="1.5"/>
+            <line x1="36" y1="17" x2="28.2" y2="21" stroke="#1A2A4A" stroke-width="1.5"/>
+            <line x1="19.8" y1="27" x2="12" y2="31" stroke="#1A2A4A" stroke-width="1.5"/>
+            <line x1="12" y1="17" x2="19.8" y2="21" stroke="#1A2A4A" stroke-width="1.5"/>
+            <line x1="28.2" y1="27" x2="36" y2="31" stroke="#1A2A4A" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3 class="h3">Ferro Silicon Magnesium</h3>
+        <p>High-performance nodulariser for ductile iron production. Converts flaky graphite into spherical form for superior tensile strength.</p>
+        <a href="#" class="al">
+          Learn More
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Inoculants -->
+      <div class="pc">
+        <div class="p-icon">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#031534" opacity=".07"/>
+            <circle cx="24" cy="24" r="8" stroke="#C0202A" stroke-width="2" fill="none"/>
+            <circle cx="24" cy="14" r="3" fill="#1A2A4A"/>
+            <circle cx="24" cy="34" r="3" fill="#1A2A4A"/>
+            <circle cx="14" cy="24" r="3" fill="#1A2A4A"/>
+            <circle cx="34" cy="24" r="3" fill="#1A2A4A"/>
+            <circle cx="17.5" cy="17.5" r="2.5" fill="#C0202A" opacity=".6"/>
+            <circle cx="30.5" cy="17.5" r="2.5" fill="#C0202A" opacity=".6"/>
+            <circle cx="17.5" cy="30.5" r="2.5" fill="#C0202A" opacity=".6"/>
+            <circle cx="30.5" cy="30.5" r="2.5" fill="#C0202A" opacity=".6"/>
+          </svg>
+        </div>
+        <h3 class="h3">Inoculants</h3>
+        <p>Precision inoculants for superior metallurgical control. Prevents chilling and promotes uniform A-type graphite structure in cast iron.</p>
+        <a href="#" class="al">
+          Learn More
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Mould Powder -->
+      <div class="pc">
+        <div class="p-icon">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#031534" opacity=".07"/>
+            <rect x="12" y="18" width="24" height="16" rx="2" stroke="#1A2A4A" stroke-width="2" fill="none"/>
+            <rect x="16" y="14" width="16" height="6"  rx="1" stroke="#C0202A" stroke-width="1.8" fill="none"/>
+            <line x1="17" y1="26" x2="31" y2="26" stroke="#1A2A4A" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <line x1="17" y1="30" x2="31" y2="30" stroke="#1A2A4A" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <path d="M19 22 Q24 19 29 22" stroke="#C0202A" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="h3">Mould Powder</h3>
+        <p>Premium casting powders for optimal surface finish. Engineered for lubrication and heat transfer control in continuous casting operations.</p>
+        <a href="#" class="al">
+          Learn More
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Nickel Magnesium -->
+      <div class="pc">
+        <div class="p-icon">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#031534" opacity=".07"/>
+            <circle cx="24" cy="24" r="11" stroke="#1A2A4A" stroke-width="2" fill="#e8f0f8"/>
+            <circle cx="24" cy="24" r="6" fill="#C0202A" opacity=".75"/>
+            <circle cx="24" cy="24" r="2.5" fill="#fff"/>
+            <path d="M24 13 A11 11 0 0 1 35 24" stroke="#C0202A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="h3">Nickel Magnesium</h3>
+        <p>Specialty alloys for high-strength casting applications. High metallurgy yield with minimal temperature drop, ideal for corrosion-resistant irons.</p>
+        <a href="#" class="al">
+          Learn More
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Inoculant Cored Wire -->
+      <div class="pc">
+        <div class="p-icon">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#031534" opacity=".07"/>
+            <circle cx="24" cy="24" r="10" stroke="#1A2A4A" stroke-width="2" fill="none"/>
+            <circle cx="24" cy="24" r="5" stroke="#C0202A" stroke-width="1.8" fill="none"/>
+            <circle cx="24" cy="24" r="1.5" fill="#C0202A"/>
+            <path d="M24 14 Q30 14 32 18 Q36 22 34 27" stroke="#1A2A4A" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="h3">Inoculant Cored Wire</h3>
+        <p>Efficient wire feeding solutions for precise inoculation. Eliminates inoculation fade through late-stage injection at deep ladle depths.</p>
+        <a href="#" class="al">
+          Learn More
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- FeSiMg Cored Wire -->
+      <div class="pc">
+        <div class="p-icon">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#031534" opacity=".07"/>
+            <rect x="14" y="20" width="20" height="8" rx="4" stroke="#1A2A4A" stroke-width="2" fill="none"/>
+            <line x1="10" y1="24" x2="14" y2="24" stroke="#C0202A" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="34" y1="24" x2="38" y2="24" stroke="#C0202A" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="2.5" fill="#C0202A"/>
+            <line x1="24" y1="13" x2="24" y2="20" stroke="#1A2A4A" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <line x1="24" y1="28" x2="24" y2="35" stroke="#1A2A4A" stroke-width="1.5" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <h3 class="h3">FeSiMg Cored Wire</h3>
+        <p>Advanced cored wire for consistent magnesium recovery. Fed into molten iron for a calm reaction with up to 55% Mg recovery rate.</p>
+        <a href="#" class="al">
+          Learn More
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════════════════ -->
+<section id="infra" class="sec" style="background:#fff;">
+  <div class="w">
+
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <h2 class="h2">Why Choose FeX Alloys</h2>
+      <div class="bar bar-c"></div>
+      <p class="lead" style="max-width:520px;margin:0 auto;font-size:.9rem;">
+        From induction smelting to cored-wire fabrication, every stage of our process is engineered for precision and reliability.
+      </p>
+    </div>
+
+    <div class="feat-grid">
+
+      <div class="fc">
+        <div class="fi" style="background:#031534;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="h3" style="font-size:.9rem;">ISO 9001:2015</h3>
+        <p style="font-size:.82rem;color:#64748b;line-height:1.6;">Certified quality management across every production batch with strict elemental tolerance control.</p>
+      </div>
+
+      <div class="fc">
+        <div class="fi" style="background:#C0202A;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3 class="h3" style="font-size:.9rem;">±0.05% Precision</h3>
+        <p style="font-size:.82rem;color:#64748b;line-height:1.6;">XRF & ICP-OES spectroscopy on every ladle batch. Tolerance of ±0.05% elemental weight content.</p>
+      </div>
+
+      <div class="fc">
+        <div class="fi" style="background:#031534;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          </svg>
+        </div>
+        <h3 class="h3" style="font-size:.9rem;">25,000 MT Capacity</h3>
+        <p style="font-size:.82rem;color:#64748b;line-height:1.6;">Medium-frequency induction furnaces with PLC temperature governors ensuring homogeneous batches.</p>
+      </div>
+
+      <div class="fc">
+        <div class="fi" style="background:#031534;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <h3 class="h3" style="font-size:.9rem;">Global Shipping</h3>
+        <p style="font-size:.82rem;color:#64748b;line-height:1.6;">Custom inert packaging, localized spec standards, and reliable shipping pipelines to 35+ countries.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     QUALITY
+══════════════════════════════════════════ -->
+<section id="quality" class="sec-lg" style="background:#f6f3f2;">
+  <div class="w">
+    <div class="two-col" style="align-items:start;">
+
+      <!-- Left text -->
+      <div>
+        <p class="lbl" style="color:#C0202A;margin-bottom:.5rem;">Quality Assurance</p>
+        <h2 class="h2">Tested. Certified. Trusted.</h2>
+        <div class="bar"></div>
+        <p class="lead" style="margin-bottom:1.5rem;">
+          Every batch is subjected to rigorous multi-stage quality validation — from melt sampling through spectroscopic analysis to metallographic simulation — before leaving our facility.
+        </p>
+
+        <div class="ck" style="border-left:3px solid #C0202A;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0202A" stroke-width="2.5" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:#1A2A4A;font-size:.875rem;margin-bottom:3px;">XRF & ICP-OES Spectroscopy</p>
+            <p style="font-size:.8rem;color:#64748b;line-height:1.6;">Every ladle batch sampled twice. Spark-tested on-site to verify element ranges before solidifying. Tolerance: ±0.05%.</p>
+          </div>
+        </div>
+
+        <div class="ck" style="border-left:3px solid #031534;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#031534" stroke-width="2.5" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:#1A2A4A;font-size:.875rem;margin-bottom:3px;">Laser Diffraction & Sieve Analysis</p>
+            <p style="font-size:.8rem;color:#64748b;line-height:1.6;">Automated mechanical sifting on each batch. Ultra-fines removed to prevent burn-off. 92% min pass-through.</p>
+          </div>
+        </div>
+
+        <div class="ck" style="border-left:3px solid #C0202A;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0202A" stroke-width="2.5" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:#1A2A4A;font-size:.875rem;margin-bottom:3px;">Metallographic Microscope Analysis</p>
+            <p style="font-size:.8rem;color:#64748b;line-height:1.6;">Mock ductile iron test bars cast on-site. Nodularity target &gt;90% verified under Olympus GX53 microscope.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: cert badges -->
+      <div class="cert-grid">
+
+        <div class="crt">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C0202A" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="cn">ISO 9001:2015</span>
+          <span class="cs">Quality Certified</span>
+        </div>
+
+        <div class="crt">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#031534" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <span class="cn">25K MT / Year</span>
+          <span class="cs">Production Capacity</span>
+        </div>
+
+        <div class="crt">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C0202A" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span class="cn">±0.05% Tolerance</span>
+          <span class="cs">Element Precision</span>
+        </div>
+
+        <div class="crt">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#031534" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="cn">35+ Countries</span>
+          <span class="cs">Global Export</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     GLOBAL PRESENCE
+══════════════════════════════════════════ -->
+<section id="global">
+  <!-- SVG world map backdrop -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.12;pointer-events:none;"
+       viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="170" cy="190" rx="130" ry="95" fill="#fff"/>
+    <ellipse cx="165" cy="305" rx="85"  ry="65" fill="#fff"/>
+    <ellipse cx="400" cy="175" rx="105" ry="88" fill="#fff"/>
+    <ellipse cx="480" cy="295" rx="55"  ry="50" fill="#fff"/>
+    <ellipse cx="600" cy="190" rx="75"  ry="90" fill="#fff"/>
+    <ellipse cx="640" cy="305" rx="48"  ry="58" fill="#fff"/>
+    <ellipse cx="755" cy="200" rx="90"  ry="78" fill="#fff"/>
+    <ellipse cx="870" cy="235" rx="58"  ry="52" fill="#fff"/>
+    <ellipse cx="830" cy="315" rx="38"  ry="28" fill="#fff"/>
+    <pattern id="wd" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1.1" fill="#fff" opacity=".28"/>
+    </pattern>
+    <rect width="1000" height="500" fill="url(#wd)"/>
+  </svg>
+  <div class="g-overlay"></div>
+
+  <div class="g-inner">
+    <h2>Supplying Foundries Across 35+ Countries</h2>
+    <p>Providing reliable shipping pipelines, custom inert packaging, and localized specification standards from our facility in India to foundries worldwide.</p>
+
+    <!-- Country pills -->
+    <div class="country-pills">
+      <span class="cpill">Germany</span>
+      <span class="cpill">Japan</span>
+      <span class="cpill">USA</span>
+      <span class="cpill">South Korea</span>
+      <span class="cpill">Italy</span>
+      <span class="cpill">Brazil</span>
+      <span class="cpill">Turkey</span>
+      <span class="cpill">India</span>
+      <span class="cpill">+ 27 more</span>
+    </div>
+
+    <a href="#cta" class="btn-o" style="display:inline-block;width:auto;padding:.85rem 1.75rem;">
+      Get a Shipping Quote
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CTA STRIP
+══════════════════════════════════════════ -->
+<section id="cta">
+  <div class="w">
+    <div class="cta-in">
+      <h2>Looking for high-quality foundry alloys? Let's talk.</h2>
+      <a href="mailto:info@fexalloys.com" class="btn-w">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="w">
+
+    <div class="fg">
+
+      <!-- Brand -->
+      <div>
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:1rem;">
+          <div style="width:30px;height:30px;border-radius:3px;background:#C0202A;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.6rem;color:#fff;">FeX</span>
+          </div>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:-.02em;">FeX Alloys</span>
+        </div>
+        <p style="font-size:.875rem;color:#7b92ae;line-height:1.7;margin-bottom:.875rem;">
+          Precision foundry alloys engineered for the global metallurgical industry. Consistent chemistry. Reliable supply. Trusted partnerships.
+        </p>
+        <p style="font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#C0202A;">
+          ISO 9001:2015 Certified
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <p class="fh">Quick Links</p>
+        <a href="#hero"     class="fl">Home</a>
+        <a href="#about"    class="fl">About Us</a>
+        <a href="#products" class="fl">Products</a>
+        <a href="#quality"  class="fl">Quality</a>
+        <a href="#global"   class="fl">Global Presence</a>
+      </div>
+
+      <!-- Products -->
+      <div>
+        <p class="fh">Products</p>
+        <a href="#products" class="fl">Ferro Silicon Magnesium</a>
+        <a href="#products" class="fl">Inoculants</a>
+        <a href="#products" class="fl">Mould Powder</a>
+        <a href="#products" class="fl">Nickel Magnesium</a>
+        <a href="#products" class="fl">Inoculant Cored Wire</a>
+        <a href="#products" class="fl">FeSiMg Cored Wire</a>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="fh">Contact</p>
+        <div class="fc-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C0202A" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Industrial Area, Gujarat, India — 400001
+        </div>
+        <div class="fc-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C0202A" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 00000 00000
+        </div>
+        <div class="fc-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C0202A" stroke-width="2" style="flex-shrink:0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@fexalloys.com
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="fd" />
+
+    <div class="fb">
+      <p>&copy; 2025 FeX Alloys. All rights reserved.</p>
+      <p>ISO 9001:2015 &nbsp;·&nbsp; Made in India &nbsp;·&nbsp; Supplying 35+ Countries</p>
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+  /* ── Navbar drawer ── */
+  function openMenu() {
+    var d = document.getElementById('drawer');
+    var open = d.classList.toggle('open');
+    document.getElementById('hbg').setAttribute('aria-expanded', open);
+    document.getElementById('ico-m').style.display = open ? 'none'  : 'block';
+    document.getElementById('ico-x').style.display = open ? 'block' : 'none';
+  }
+  function closeMenu() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('hbg').setAttribute('aria-expanded', 'false');
+    document.getElementById('ico-m').style.display = 'block';
+    document.getElementById('ico-x').style.display = 'none';
+  }
+  /* Close drawer on outside tap */
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('nav');
+    if (!nav.contains(e.target)) closeMenu();
+  });
+
+  /* ── Scroll shadow ── */
+  window.addEventListener('scroll', function () {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 6);
+  }, { passive: true });
+</script>
+
+</body>
+</html>

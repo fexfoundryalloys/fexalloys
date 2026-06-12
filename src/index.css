@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #031534;
+  --color-dark-navy: #1A2A4A;
+  --color-industrial-red: #C0202A;
+  --color-secondary-red: #b61724;
+  --color-bg-warm: #fcf9f8;
+  --color-surface-low: #f6f3f2;
+  --color-surface-variant: #e5e2e1;
+  --color-surface-card: #ffffff;
+  --color-on-surface: #1b1c1c;
+  --color-on-variant: #44474e;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-warm);
+    font-family: var(--font-sans);
+    color: var(--color-on-surface);
+  }
+}
+
+/* Material indicators or extra custom touches */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

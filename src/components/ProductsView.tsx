@@ -1,0 +1,199 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Search, SlidersHorizontal, ArrowRight, Sparkles } from 'lucide-react';
+import { PRODUCTS } from '../data';
+import { Product } from '../types';
+
+interface ProductsViewProps {
+  selectedProduct: Product | null;
+  setSelectedProduct: (product: Product | null) => void;
+  setTab: (tab: string) => void;
+}
+
+export default function ProductsView({ selectedProduct, setSelectedProduct, setTab }: ProductsViewProps) {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTag, setSelectedTag] = useState<string>('All');
+  
+  const tags = ['All', 'Ferro Silicon', 'Cored Wire', 'Magnesium', 'Inoculants', 'Powder'];
+
+  const filteredProducts = PRODUCTS.filter((p) => {
+    const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          p.shortDesc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          p.physicalState.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    if (selectedTag === 'All') return matchesSearch;
+    if (selectedTag === 'Ferro Silicon') return matchesSearch && p.name.toLowerCase().includes('ferro silicon') || p.name.toLowerCase().includes('fesimg');
+    if (selectedTag === 'Cored Wire') return matchesSearch && p.name.toLowerCase().includes('wire');
+    if (selectedTag === 'Magnesium') return matchesSearch && p.name.toLowerCase().includes('magnesium');
+    if (selectedTag === 'Inoculants') return matchesSearch && p.name.toLowerCase().includes('inoculant');
+    if (selectedTag === 'Powder') return matchesSearch && p.name.toLowerCase().includes('powder');
+    return matchesSearch;
+  });
+
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="max-w-[1440px] mx-auto px-6 md:px-12 py-12 space-y-16"
+      id="products-view"
+    >
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div className="space-y-4">
+          <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Expert formulations</span>
+          <h1 className="font-display text-3xl md:text-5xl font-extrabold text-brand-primary">Our Metallurgical Solutions</h1>
+          <div className="w-20 h-1.5 bg-industrial-red rounded"></div>
+        </div>
+        
+        {/* Search controls */}
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:max-w-md">
+          <div className="relative flex-grow">
+            <Search className="absolute left-3.5 top-3 text-slate-400" size={18} />
+            <input
+              type="text"
+              placeholder="Search alloys, states..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-white pl-10 pr-4 py-2.5 rounded border border-slate-200 focus:outline-none focus:border-industrial-red font-sans text-sm outline-none"
+              id="search-alloys-input"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Filter Chips */}
+      <div className="flex flex-wrap items-center gap-2 pb-4 border-b border-slate-200" id="filter-tag-chips">
+        <SlidersHorizontal className="text-slate-400 mr-2" size={16} />
+        {tags.map((tag) => (
+          <button
+            key={tag}
+            onClick={() => setSelectedTag(tag)}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all cursor-pointer ${
+              selectedTag === tag
+                ? 'bg-industrial-red text-white'
+                : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+            }`}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+
+      {/* List / Detail Split */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start" id="products-catalog-grid">
+        
+        {/* Products Grid Column */}
+        <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((p) => {
+              const isSelected = selectedProduct?.id === p.id;
+              return (
+                <div
+                  key={p.id}
+                  onClick={() => setSelectedProduct(p)}
+                  className={`bg-white rounded border cursor-pointer hover:shadow-lg transition-all p-6 text-left relative ${
+                    isSelected ? 'border-2 border-industrial-red shadow' : 'border-slate-200/60'
+                  }`}
+                  id={`product-card-${p.id}`}
+                >
+                  <div className="flex gap-4 items-center mb-4">
+                    <img
+                      alt={p.name}
+                      src={p.image}
+                      className="w-16 h-16 rounded-full object-cover border-2 border-slate-100 shrink-0"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div>
+                      <h3 className="font-display font-extrabold text-dark-navy text-sm md:text-base leading-tight">
+                        {p.name}
+                      </h3>
+                      <span className="inline-block text-[10px] font-mono font-semibold uppercase tracking-wider bg-slate-100 text-slate-500 py-0.5 px-2 rounded mt-1.5">
+                        {p.physicalState}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="font-sans text-xs text-slate-500 leading-relaxed mb-6 line-clamp-3">
+                    {p.shortDesc}
+                  </p>
+                  <div className="flex justify-between items-center bg-slate-50 p-2 rounded text-xs text-center border border-slate-100">
+                    <span className="text-slate-400 font-medium">Standard size:</span>
+                    <span className="font-mono text-slate-700 font-semibold truncate max-w-[140px]" title={p.standardSize}>
+                      {p.standardSize}
+                    </span>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div className="col-span-2 py-12 text-center bg-white rounded border border-slate-200/50">
+              <p className="text-slate-400 font-display font-medium text-base">No matching products found.</p>
+              <button 
+                onClick={() => { setSearchQuery(''); setSelectedTag('All'); }}
+                className="mt-4 text-xs font-bold text-industrial-red underline"
+              >
+                Clear Filters
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Selected Product Specification Details Pane */}
+        <div className="lg:col-span-4 lg:sticky lg:top-24">
+          <AnimatePresence mode="wait">
+            {selectedProduct ? (
+              <motion.div
+                key={selectedProduct.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white border-2 border-slate-100 rounded-lg p-6 shadow-xl space-y-6"
+                id="selected-product-pane"
+              >
+                <div className="flex justify-between items-start border-b border-slate-100 pb-4">
+                  <div>
+                    <h3 className="font-display font-extrabold text-dark-navy text-lg leading-tight">
+                      {selectedProduct.name}
+                    </h3>
+                  </div>
+                  <button
+                    onClick={() => setSelectedProduct(null)}
+                    className="text-xs text-slate-400 hover:text-slate-600 bg-slate-50 p-1.5 rounded cursor-pointer"
+                  >
+                    Close
+                  </button>
+                </div>
+
+                <div className="space-y-3">
+                  <p className="font-sans text-xs text-slate-600 leading-relaxed">
+                    {selectedProduct.longDesc}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-slate-100 flex gap-2">
+                  <button
+                    onClick={() => setTab('enquiry')}
+                    className="flex-grow bg-industrial-red text-white text-center font-sans text-xs uppercase tracking-wider font-bold py-3 px-4 hover:bg-secondary-red transition-all cursor-pointer"
+                  >
+                    Request Sample Spec
+                  </button>
+                </div>
+              </motion.div>
+            ) : (
+              <div className="bg-slate-50 border border-dashed border-slate-300 rounded-lg p-8 text-center text-slate-500 flex flex-col items-center justify-center min-h-[300px]">
+                <Sparkles className="text-slate-300 mb-4" size={32} />
+                <h4 className="font-display font-medium text-slate-700 text-sm mb-1">Interactive Specification Pane</h4>
+                <p className="text-xs text-slate-400 max-w-[200px] mx-auto leading-relaxed">
+                  Select an alloy card from the left grid to render its element breakdown and applications.
+                </p>
+              </div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
+    </motion.div>
+  );
+}
