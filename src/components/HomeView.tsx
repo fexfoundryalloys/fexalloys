@@ -113,11 +113,10 @@ export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
             </button>
           </div>
           <div className="border border-surface-variant p-3 bg-surface-low rounded shadow-md group overflow-hidden">
-            <img 
-              alt="A clean, modern industrial manufacturing plant facility from the outside." 
-              className="w-full object-cover aspect-[1.79] grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-[1.01]" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKC-3l6Y5GIrRCvvQrQkXvWRQvPC0-hRNNyoA3kl3SQvK1sZ7J-dpmYawyTWzcd55FUiBYMkfPA7oEnbmZkmIqbmF8pUDBs0mSFTaSIWDmZO2-5QXV3CmeKqItynZ5uxqSPS0R3VREhZYGP57Uao75Xz3cbf2nkvdUqkCuAKyFJoQRw_lJ8_T4YVSwlhAgIB6x7unm0tFV7dJaBLnh9pAByS22H9DJqFERzStmks51_f0gaKRjt0Rk7WtklshvNlMdhAUQRrUXD8c" 
-              referrerPolicy="no-referrer"
+            <img
+              alt="FeX Foundry Alloys manufacturing facility"
+              className="w-full object-cover aspect-[1.79] grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-[1.01]"
+              src={`${import.meta.env.BASE_URL}infrastructure.png`}
             />
           </div>
         </div>
