@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/fex-alloys/',
+    base: '/fexalloys/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
