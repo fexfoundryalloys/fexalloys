@@ -98,31 +98,24 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
                   }`}
                   id={`product-card-${p.id}`}
                 >
-                  <div className="flex gap-4 items-center mb-4">
+                  <div className="relative w-24 h-24 rounded-full mx-auto mb-5 bg-slate-50 border-4 border-slate-100 overflow-hidden">
                     <img
                       alt={p.name}
                       src={p.image}
-                      className="w-16 h-16 rounded-full object-cover border-2 border-slate-100 shrink-0"
-                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
-                    <div>
-                      <h3 className="font-display font-extrabold text-dark-navy text-sm md:text-base leading-tight">
-                        {p.name}
-                      </h3>
-                      <span className="inline-block text-[10px] font-mono font-semibold uppercase tracking-wider bg-slate-100 text-slate-500 py-0.5 px-2 rounded mt-1.5">
-                        {p.physicalState}
-                      </span>
-                    </div>
+                  </div>
+                  <div className="mb-3">
+                    <h3 className="font-display font-extrabold text-dark-navy text-sm md:text-base leading-tight">
+                      {p.name}
+                    </h3>
+                    <span className="inline-block text-[10px] font-mono font-semibold uppercase tracking-wider bg-slate-100 text-slate-500 py-0.5 px-2 rounded mt-1.5">
+                      {p.physicalState}
+                    </span>
                   </div>
                   <p className="font-sans text-xs text-slate-500 leading-relaxed mb-6 line-clamp-3">
                     {p.shortDesc}
                   </p>
-                  <div className="flex justify-between items-center bg-slate-50 p-2 rounded text-xs text-center border border-slate-100">
-                    <span className="text-slate-400 font-medium">Standard size:</span>
-                    <span className="font-mono text-slate-700 font-semibold truncate max-w-[140px]" title={p.standardSize}>
-                      {p.standardSize}
-                    </span>
-                  </div>
                 </div>
               );
             })
@@ -172,14 +165,6 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex gap-2">
-                  <button
-                    onClick={() => setTab('enquiry')}
-                    className="flex-grow bg-industrial-red text-white text-center font-sans text-xs uppercase tracking-wider font-bold py-3 px-4 hover:bg-secondary-red transition-all cursor-pointer"
-                  >
-                    Request Sample Spec
-                  </button>
-                </div>
               </motion.div>
             ) : (
               <div className="bg-slate-50 border border-dashed border-slate-300 rounded-lg p-8 text-center text-slate-500 flex flex-col items-center justify-center min-h-[300px]">

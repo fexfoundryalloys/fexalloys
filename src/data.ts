@@ -6,7 +6,7 @@ export const PRODUCTS: Product[] = [
     name: 'Ferro Silicon Magnesium',
     shortDesc: 'High-performance nodulariser for ductile iron production.',
     longDesc: 'Ferro Silicon Magnesium alloys are master alloys of Magnesium with Iron and Silicon. They facilitate small additions of Magnesium to Iron, required to transform graphite flakes to spheroids. Our alloys are produced in induction furnaces and cast in permanent moulds to give homogeneity. We can offer the right alloy with controlled amounts of Ca and TRE, to reduce the severity of reaction and to improve Magnesium recovery. All alloys are analysed with the help of X-Ray Fluorescence spectrometer to ensure consistent quality.',
-    image: '/products/ferro-silicon-magnesium.png',
+    image: `${import.meta.env.BASE_URL}products/ferro-silicon-magnesium.png`,
     specifications: [
       { element: 'Silicon (Si)', range: '44.0% - 48.0%' },
       { element: 'Magnesium (Mg)', range: '5.5% - 9.0% (Customizable)' },
@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
     name: 'Inoculants',
     shortDesc: 'Precision inoculants for superior metallurgical control.',
     longDesc: 'Inoculants are FeSi based alloys which contain carefully balanced amounts of active elements designed to control the microstructure and mechanical properties of cast irons. Through the correct inoculation of cast irons the formation of chill can be prevented and gas related porosity and shrinkage to a great extent controlled and minimized. Our inoculants are specially designed to serve most aspects of grey and ductile iron production, with defined contents of elements like Calcium and Barium.',
-    image: '/products/inoculants.png',
+    image: `${import.meta.env.BASE_URL}products/inoculants.png`,
     specifications: [
       { element: 'Silicon (Si)', range: '70.0% - 76.0%' },
       { element: 'Calcium (Ca)', range: '0.5% - 2.0%' },
@@ -49,7 +49,7 @@ export const PRODUCTS: Product[] = [
     name: 'Mould Powder',
     shortDesc: 'Premium casting powders for optimal surface finish.',
     longDesc: 'Mould Powder is a crucial component in the production of ductile iron pipes. It is applied to the mould surface to facilitate easy removal of the casting, reduce friction, and control heat transfer. The powder helps prevent defects, such as sticking and scarring, and ensures a smooth casting process.',
-    image: '/products/mould-powder.png',
+    image: `${import.meta.env.BASE_URL}products/mould-powder.png`,
     specifications: [
       { element: 'Carbon (C)', range: '4.0% - 8.0%' },
       { element: 'Silica (SiO2)', range: '30.0% - 35.0%' },
@@ -70,7 +70,7 @@ export const PRODUCTS: Product[] = [
     name: 'Nickel Magnesium',
     shortDesc: 'Specialty alloys for high-strength casting applications.',
     longDesc: 'Nickel Magnesium master alloys find their main application as a high quality nodulizer in the manufacturing of SG iron or nodular irons, predominantly in those containing nickel. The addition of master alloys more efficiently transfers Magnesium into the liquid cast iron than pure Magnesium metal because of a higher density of the master alloys. The improved treatment results in more efficient Magnesium recovery and minimizes MgO fume emission.',
-    image: '/products/nickel-magnesium.png',
+    image: `${import.meta.env.BASE_URL}products/nickel-magnesium.png`,
     specifications: [
       { element: 'Magnesium (Mg)', range: '14.0% - 20.0%' },
       { element: 'Rare Earth (TRE)', range: 'Optional (0.8% - 1.2%)' },
@@ -89,7 +89,7 @@ export const PRODUCTS: Product[] = [
     name: 'Inoculant Cored Wire',
     shortDesc: 'Efficient wire feeding solutions for precise inoculation.',
     longDesc: 'A type of cored wire used to introduce inoculants into molten iron. The wire contains a core of inoculant materials, such as ferrosilicon, calcium, or other elements, which help to improve the microstructure and properties of the cast iron. The cored wire is fed into the molten iron, where the steel sheath melts, releasing the inoculant core, which dissolves and distributes evenly, enhancing the quality of the cast iron.',
-    image: '/products/inoculant-cored-wire.png',
+    image: `${import.meta.env.BASE_URL}products/inoculant-cored-wire.png`,
     specifications: [
       { element: 'Sheath Steel', range: '0.35mm Steel strip overlay' },
       { element: 'Filling Ratio', range: '60% - 65% by weight' },

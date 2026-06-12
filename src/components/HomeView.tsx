@@ -198,7 +198,7 @@ export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-r from-[#031534] via-[#031534]/40 to-transparent z-10"></div>
             <img
-              src="/infrastructure.png"
+              src={`${import.meta.env.BASE_URL}infrastructure.png`}
               alt="Upcoming Ahmedabad manufacturing facility"
               className="w-full h-full object-cover grayscale opacity-60"
             />

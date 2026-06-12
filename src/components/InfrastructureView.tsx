@@ -22,7 +22,7 @@ export default function InfrastructureView() {
       {/* Hero — image with INFRASTRUCTURE overlay */}
       <div className="relative w-full min-h-[55vh] flex items-end overflow-hidden">
         <img
-          src="/infrastructure.png"
+          src={`${import.meta.env.BASE_URL}infrastructure.png`}
           alt="FeX Foundry Alloys Manufacturing Facility"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
