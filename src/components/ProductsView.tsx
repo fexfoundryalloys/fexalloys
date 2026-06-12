@@ -109,9 +109,6 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
                     <h3 className="font-display font-extrabold text-dark-navy text-sm md:text-base leading-tight">
                       {p.name}
                     </h3>
-                    <span className="inline-block text-[10px] font-mono font-semibold uppercase tracking-wider bg-slate-100 text-slate-500 py-0.5 px-2 rounded mt-1.5">
-                      {p.physicalState}
-                    </span>
                   </div>
                   <p className="font-sans text-xs text-slate-500 leading-relaxed mb-6 line-clamp-3">
                     {p.shortDesc}

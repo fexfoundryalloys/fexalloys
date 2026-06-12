@@ -85,9 +85,9 @@ export default function App() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-white/10 pb-16">
-            
+
             {/* Column 1 - Brand Summary */}
-            <div className="md:col-span-5 space-y-6">
+            <div className="md:col-span-4 space-y-6">
               <div
                 onClick={() => handleTabChange('home')}
                 className="cursor-pointer hover:opacity-80 transition-opacity inline-block"
@@ -100,16 +100,13 @@ export default function App() {
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
                 ISO 9001:2015 Certified manufacturer supplying high-performance nodularisers, customized inoculants, and specialty cored wires to automotive, aeronautical and structural foundries globally.
               </p>
-              <div className="text-slate-500 text-xs font-mono">
-                REG NO: MET-25000-IND // OFF-OFFLINESECURE
-              </div>
             </div>
 
-            {/* Column 2 - Main Directories */}
-            <div className="md:col-span-3 md:col-start-7 space-y-4">
+            {/* Column 2 - Quick Links */}
+            <div className="md:col-span-2 md:col-start-6 space-y-4">
               <h5 className="font-display font-extrabold text-[#C0202A] text-xs uppercase tracking-widest font-mono">Quick Links</h5>
               <ul className="space-y-3 text-sm text-slate-400 font-medium">
-                {['home', 'about', 'products', 'infra'].map((lnk) => (
+                {['home', 'about', 'products', 'infra', 'quality', 'careers'].map((lnk) => (
                   <li key={lnk}>
                     <button
                       onClick={() => handleTabChange(lnk)}
@@ -122,24 +119,23 @@ export default function App() {
               </ul>
             </div>
 
-            {/* Column 3 - QA and Shipping */}
-            <div className="md:col-span-3 space-y-4">
-              <h5 className="font-display font-extrabold text-[#C0202A] text-xs uppercase tracking-widest font-mono">Get In Touch</h5>
-              <ul className="space-y-3 text-sm text-slate-400 font-medium">
-                {[
-                  { id: 'quality', label: 'Quality Controls' },
-                  { id: 'enquiry', label: 'Contact Sales / RFQ' }
-                ].map((lnk) => (
-                  <li key={lnk.id}>
-                    <button
-                      onClick={() => handleTabChange(lnk.id)}
-                      className="hover:text-white transition-all hover:underline outline-none text-left cursor-pointer"
-                    >
-                      {lnk.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+            {/* Column 3 - Addresses */}
+            <div className="md:col-span-4 md:col-start-9 space-y-5">
+              <h5 className="font-display font-extrabold text-[#C0202A] text-xs uppercase tracking-widest font-mono">Our Locations</h5>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Registered Office</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">AN-64C, Shalimar Bagh,<br />New Delhi 110088</p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Manufacturing Site</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">Village Liwaspur, Post Bahalgarh,<br />Sonipat, Haryana 131021</p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-white/70 uppercase tracking-wider mb-1">Warehouse</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">MIDC, Shiroli, Pune-Bangalore Highway,<br />Kolhapur 416122</p>
+                </div>
+              </div>
             </div>
 
           </div>

@@ -53,7 +53,27 @@ export default function EnquiryForm() {
               </div>
               <div>
                 <p className="text-xs font-bold text-dark-navy font-display uppercase tracking-wide mb-1">Registered Office</p>
-                <p className="text-sm text-slate-500 leading-relaxed">AN-64C, Shalimar Bagh,<br />New Delhi - 110088, INDIA</p>
+                <p className="text-sm text-slate-500 leading-relaxed">AN-64C, Shalimar Bagh,<br />New Delhi 110088</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded bg-red-50 flex items-center justify-center shrink-0">
+                <MapPin className="text-industrial-red" size={18} />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-dark-navy font-display uppercase tracking-wide mb-1">Manufacturing Site</p>
+                <p className="text-sm text-slate-500 leading-relaxed">Village Liwaspur, Post Bahalgarh,<br />Sonipat, Haryana 131021</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded bg-red-50 flex items-center justify-center shrink-0">
+                <MapPin className="text-industrial-red" size={18} />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-dark-navy font-display uppercase tracking-wide mb-1">Warehouse</p>
+                <p className="text-sm text-slate-500 leading-relaxed">MIDC, Shiroli, Pune-Bangalore Highway,<br />Kolhapur 416122</p>
               </div>
             </div>
 
