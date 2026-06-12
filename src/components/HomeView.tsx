@@ -28,7 +28,7 @@ export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
             className="space-y-8"
           >
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-              Precision Foundry Alloys for a Stronger World
+              Precision foundry alloys for a stronger world
             </h1>
             <p className="font-sans text-lg text-surface-variant max-w-xl border-l-4 border-industrial-red pl-4 font-light">
               ISO 9001:2015 Certified | 25,000 MT/Year Capacity | 35+ Countries
@@ -95,7 +95,7 @@ export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-dark-navy" id="about-snippet-title">
-              Uncompromising Quality in Metallurgy
+              Uncompromising quality in metallurgy
             </h2>
             <div className="w-16 h-1.5 bg-industrial-red"></div>
             <p className="font-sans text-base text-on-variant leading-relaxed text-slate-600">
@@ -180,7 +180,7 @@ export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
           <div className="flex flex-col justify-center px-8 md:px-16 py-16 md:py-20 space-y-6 relative z-10">
             <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Expansion</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
-              Introducing our Manufacturing Facility with state of art new technology
+              Introducing our manufacturing facility with state of art new technology
             </h2>
             <div className="w-16 h-1 bg-industrial-red rounded"></div>
             <div className="space-y-1 pt-2">

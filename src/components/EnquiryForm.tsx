@@ -40,7 +40,7 @@ export default function EnquiryForm() {
           <div className="space-y-3">
             <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Contact Us</span>
             <h1 className="font-display text-3xl md:text-4xl font-extrabold text-brand-primary leading-tight">
-              Feel Free to Contact
+              Feel free to contact
             </h1>
             <div className="w-16 h-1.5 bg-industrial-red rounded"></div>
             <p className="text-slate-500 text-sm leading-relaxed pt-1">Happy to assist you!</p>
