@@ -21,7 +21,8 @@ export const PRODUCTS: Product[] = [
       { id: 3, text: 'Heavy duty industrial pumps, pipes, and windmill casting structures.' }
     ].map(a => a.text),
     physicalState: 'Deep Grey Lumps',
-    standardSize: '5 - 30 mm, 10 - 40 mm (90% min passing)'
+    standardSize: '5 - 30 mm, 10 - 40 mm (90% min passing)',
+    grades: ['XMAG 511', 'XMAG 521', 'XMAG 611', 'XMAG 621', 'XMAG 731', 'XMAG 821', 'XMAG 9221', 'XMAG 630 L', 'XMAG 730 L', 'XMAG 423 S', 'XMAG 511 S']
   },
   {
     id: 'inoc',

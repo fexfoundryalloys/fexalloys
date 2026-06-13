@@ -185,22 +185,40 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
           {/* Left — text */}
           <div className="flex flex-col justify-center px-8 md:px-16 py-16 md:py-20 space-y-6 relative z-10">
-            <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Expansion</span>
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-industrial-red opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-industrial-red"></span>
+              </span>
+              <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Expansion</span>
+            </div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
               Introducing our manufacturing facility with state of art new technology
             </h2>
             <div className="w-16 h-1 bg-industrial-red rounded"></div>
             <div className="space-y-1 pt-2">
               <p className="font-display text-2xl md:text-3xl font-extrabold text-white">
-                60,000 MT/year <span className="text-surface-variant font-light text-xl">in Ahmedabad</span>
+                60,000 MT/Year <span className="text-surface-variant font-light text-xl">in Ahmedabad</span>
               </p>
               <div className="flex items-center gap-3 pt-4">
                 <span className="text-xs uppercase tracking-widest font-bold text-surface-variant font-mono">Expected Launch</span>
-                <span className="bg-industrial-red text-white text-xs font-extrabold uppercase tracking-widest px-3 py-1.5 font-mono">Coming Soon</span>
+                <span className="relative inline-flex">
+                  <span className="animate-ping absolute inline-flex h-full w-full bg-industrial-red opacity-40 rounded-sm"></span>
+                  <span className="bg-industrial-red text-white text-xs font-extrabold uppercase tracking-widest px-3 py-1.5 font-mono relative">Coming Soon</span>
+                </span>
               </div>
             </div>
           </div>
-          {/* Right — industrial image */}
+          {/* Mobile — factory image shown below text */}
+          <div className="relative block lg:hidden w-full h-52 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#031534] via-[#031534]/30 to-transparent z-10"></div>
+            <img
+              src={`${import.meta.env.BASE_URL}infrastructure.png`}
+              alt="Upcoming Ahmedabad manufacturing facility"
+              className="w-full h-full object-cover grayscale opacity-70"
+            />
+          </div>
+          {/* Desktop — industrial image on right */}
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-r from-[#031534] via-[#031534]/40 to-transparent z-10"></div>
             <img

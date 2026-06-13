@@ -72,18 +72,13 @@ export default function AboutView() {
         {/* Director quote card */}
         <div className="lg:col-span-5 bg-white border border-surface-variant/40 rounded p-8 shadow-md relative">
           <div className="absolute top-4 right-4 text-surface-variant font-display text-8xl font-extrabold select-none opacity-20">"</div>
-          <h3 className="font-display text-lg font-bold text-dark-navy mb-4">A Message from the Director</h3>
+          <h3 className="font-display text-lg font-bold text-dark-navy mb-4">A Message from the CEO</h3>
           <p className="text-slate-600 text-sm leading-relaxed italic mb-6">
             "An alloy is more than just raw components thrown together in heat. It is a formula of trust. When a bridge casting or a wind turbine shaft depends on ductile sound structure, there is zero room for trace magnesium variability. That is why at FeX, every ounce of material undergoes chemical audit prior to ship."
           </p>
-          <div className="flex items-center gap-4 border-t border-slate-100 pt-4">
-            <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">
-              FX
-            </div>
-            <div>
-              <h5 className="font-display font-extrabold text-dark-navy text-sm">Company Director</h5>
-              <p className="text-xs text-slate-500">FeX Foundry Alloys Private Limited</p>
-            </div>
+          <div className="border-t border-slate-100 pt-4">
+            <h5 className="font-display font-extrabold text-dark-navy text-sm">Achal Garg</h5>
+            <p className="text-xs text-slate-500">CEO, FeX Foundry Alloys Private Limited</p>
           </div>
         </div>
       </div>
