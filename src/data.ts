@@ -3,10 +3,10 @@ import { Product, Facility, QualityTest, CountryPresence } from './types';
 export const PRODUCTS: Product[] = [
   {
     id: 'fesm',
-    name: 'Ferro Silicon Magnesium',
+    name: 'Ferrosilicon Magnesium',
     shortDesc: 'High-performance nodulariser for ductile iron production.',
-    longDesc: 'Ferro Silicon Magnesium alloys are master alloys of Magnesium with Iron and Silicon. They facilitate small additions of Magnesium to Iron, required to transform graphite flakes to spheroids. Our alloys are produced in induction furnaces and cast in permanent moulds to give homogeneity. We can offer the right alloy with controlled amounts of Ca and TRE, to reduce the severity of reaction and to improve Magnesium recovery. All alloys are analysed with the help of X-Ray Fluorescence spectrometer to ensure consistent quality.',
-    image: `${import.meta.env.BASE_URL}products/ferro-silicon-magnesium.png`,
+    longDesc: 'Ferrosilicon Magnesium is a single compound master alloy of Magnesium with Iron and Silicon. It facilitates small additions of Magnesium to Iron, required to transform graphite flakes to spheroids. Our alloys are produced in induction furnaces and cast in permanent moulds to give homogeneity. We can offer the right alloy with controlled amounts of Ca and TRE, to reduce the severity of reaction and to improve Magnesium recovery. All alloys are analysed with the help of X-Ray Fluorescence spectrometer to ensure consistent quality.',
+    image: `${import.meta.env.BASE_URL}products/ferro-silicon-magnesium.jpeg`,
     specifications: [
       { element: 'Silicon (Si)', range: '44.0% - 48.0%' },
       { element: 'Magnesium (Mg)', range: '5.5% - 9.0% (Customizable)' },
@@ -25,10 +25,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'inoc',
-    name: 'Inoculants',
-    shortDesc: 'Precision inoculants for superior metallurgical control.',
-    longDesc: 'Inoculants are FeSi based alloys which contain carefully balanced amounts of active elements designed to control the microstructure and mechanical properties of cast irons. Through the correct inoculation of cast irons the formation of chill can be prevented and gas related porosity and shrinkage to a great extent controlled and minimized. Our inoculants are specially designed to serve most aspects of grey and ductile iron production, with defined contents of elements like Calcium and Barium.',
-    image: `${import.meta.env.BASE_URL}products/inoculants.png`,
+    name: 'Inoculants & Cored Wire',
+    shortDesc: 'Precision inoculants and cored wire solutions for superior metallurgical control.',
+    longDesc: 'Inoculants are FeSi based alloys which contain carefully balanced amounts of active elements designed to control the microstructure and mechanical properties of cast irons. Through the correct inoculation of cast irons the formation of chill can be prevented and gas related porosity and shrinkage to a great extent controlled and minimized. Our inoculants are also available as cored wire — a steel-sheathed wire fed into molten iron, releasing the inoculant core evenly for precise, late-stage inoculation in automated foundry lines.',
+    image: `${import.meta.env.BASE_URL}products/inoculants.jpeg`,
     specifications: [
       { element: 'Silicon (Si)', range: '70.0% - 76.0%' },
       { element: 'Calcium (Ca)', range: '0.5% - 2.0%' },
@@ -41,15 +41,16 @@ export const PRODUCTS: Product[] = [
       { id: 2, text: 'Grain refinement and cell-count maximization for gray cast iron.' },
       { id: 3, text: 'In-ladle and stream inoculation schemes for cast foundries.' }
     ].map(a => a.text),
-    physicalState: 'Grey Crystalline Grains',
-    standardSize: '0.2-0.7 mm / 1-3 mm / 2-6 mm / 6-15 mm (as per requirements)'
+    physicalState: 'Grey Crystalline Grains / Wire Coils',
+    standardSize: '0.2-0.7 mm / 1-3 mm / 2-6 mm / 6-15 mm | Wire: 9mm or 13mm dia',
+    grades: ['XBAR', 'XBIS', 'XPRO', 'XTREME', 'XTREME MAX', 'XCER', 'XCROWN', 'XCAL', 'XPERT', 'XAL', 'XMAX']
   },
   {
     id: 'mould',
     name: 'Mould Powder',
     shortDesc: 'Premium casting powders for optimal surface finish.',
     longDesc: 'Mould Powder is a crucial component in the production of ductile iron pipes. It is applied to the mould surface to facilitate easy removal of the casting, reduce friction, and control heat transfer. The powder helps prevent defects, such as sticking and scarring, and ensures a smooth casting process.',
-    image: `${import.meta.env.BASE_URL}products/mould-powder.png`,
+    image: `${import.meta.env.BASE_URL}products/mould-powder.jpeg`,
     specifications: [
       { element: 'Carbon (C)', range: '4.0% - 8.0%' },
       { element: 'Silica (SiO2)', range: '30.0% - 35.0%' },
@@ -70,7 +71,7 @@ export const PRODUCTS: Product[] = [
     name: 'Nickel Magnesium',
     shortDesc: 'Specialty alloys for high-strength casting applications.',
     longDesc: 'Nickel Magnesium master alloys find their main application as a high quality nodulizer in the manufacturing of SG iron or nodular irons, predominantly in those containing nickel. The addition of master alloys more efficiently transfers Magnesium into the liquid cast iron than pure Magnesium metal because of a higher density of the master alloys. The improved treatment results in more efficient Magnesium recovery and minimizes MgO fume emission.',
-    image: `${import.meta.env.BASE_URL}products/nickel-magnesium.png`,
+    image: `${import.meta.env.BASE_URL}products/nickel-magnesium.jpeg`,
     specifications: [
       { element: 'Magnesium (Mg)', range: '14.0% - 20.0%' },
       { element: 'Rare Earth (TRE)', range: 'Optional (0.8% - 1.2%)' },
@@ -82,27 +83,8 @@ export const PRODUCTS: Product[] = [
       { id: 3, text: 'Severe heat turbine parts and special aerospace foundry setups.' }
     ].map(a => a.text),
     physicalState: 'Shiny Silver Lumps',
-    standardSize: '10-50 mm / 20-80 mm (Packed in 100 kg drums)'
-  },
-  {
-    id: 'inwire',
-    name: 'Inoculant Cored Wire',
-    shortDesc: 'Efficient wire feeding solutions for precise inoculation.',
-    longDesc: 'A type of cored wire used to introduce inoculants into molten iron. The wire contains a core of inoculant materials, such as ferrosilicon, calcium, or other elements, which help to improve the microstructure and properties of the cast iron. The cored wire is fed into the molten iron, where the steel sheath melts, releasing the inoculant core, which dissolves and distributes evenly, enhancing the quality of the cast iron.',
-    image: `${import.meta.env.BASE_URL}products/inoculant-cored-wire.png`,
-    specifications: [
-      { element: 'Sheath Steel', range: '0.35mm Steel strip overlay' },
-      { element: 'Filling Ratio', range: '60% - 65% by weight' },
-      { element: 'Active Material', range: 'Silicon-Barium-Calcium or customized alloy' },
-      { element: 'Linear Density', range: '220 - 280 g/m' }
-    ],
-    applications: [
-      { id: 1, text: 'Late-stage stream or ladle wire injection systems.' },
-      { id: 2, text: 'High-production robotic ductile iron foundry lines.' },
-      { id: 3, text: 'Strict control over graphite size distributions.' }
-    ].map(a => a.text),
-    physicalState: 'Perfect Wound Wire Coils',
-    standardSize: 'Diameter 9mm or 13mm (+/- 0.2mm)'
+    standardSize: '10-50 mm / 20-80 mm (Packed in 100 kg drums)',
+    grades: ['XNIMAG 150', 'XNIMAG 151', 'XNIMAG 190', 'XNIMAG 191']
   },
 ];
 

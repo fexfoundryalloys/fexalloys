@@ -34,20 +34,27 @@ export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
               ISO 9001:2015 Certified | 25,000 MT/Year Capacity | 35+ Countries
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button 
+              <button
                 onClick={() => setTab('products')}
                 className="bg-industrial-red text-white font-sans text-xs tracking-wider uppercase font-bold py-4 px-8 text-center hover:bg-white hover:text-industrial-red transition-all duration-300 border-2 border-industrial-red shadow-lg active:scale-95 cursor-pointer"
                 id="hero-explore-btn"
               >
                 Explore Products
               </button>
-              <button 
+              <button
                 onClick={() => setTab('enquiry')}
                 className="bg-transparent text-white font-sans text-xs tracking-wider uppercase font-bold py-4 px-8 text-center hover:bg-white hover:text-brand-primary transition-all duration-300 border-2 border-white active:scale-95 cursor-pointer"
                 id="hero-contact-btn"
               >
                 Contact Us
               </button>
+              <a
+                href={`${import.meta.env.BASE_URL}FeX Catalogue 2026.pdf`}
+                download="FeX Catalogue 2026.pdf"
+                className="bg-transparent text-white font-sans text-xs tracking-wider uppercase font-bold py-4 px-8 text-center hover:bg-white hover:text-brand-primary transition-all duration-300 border-2 border-white/50 active:scale-95 cursor-pointer flex items-center justify-center gap-2"
+              >
+                Download Catalogue
+              </a>
             </div>
           </motion.div>
           <motion.div 
@@ -131,7 +138,7 @@ export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
             </h2>
             <div className="w-16 h-1.5 bg-industrial-red mx-auto"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:[&>*:nth-child(4)]:col-start-1 lg:[&>*:nth-child(5)]:col-start-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {homeProducts.map((p) => (
               <motion.div 
                 key={p.id}

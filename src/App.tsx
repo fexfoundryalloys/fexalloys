@@ -62,7 +62,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-bg-warm font-sans text-on-surface antialiased pt-20 flex flex-col justify-between selection:bg-industrial-red selection:text-white">
       {/* Top Navigation Panel */}
-      <Navbar currentTab={currentTab} setTab={setTab} />
+      <Navbar currentTab={currentTab} setTab={setTab} onSelectProduct={(product) => { setSelectedProduct(product); setTab('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} />
 
       {/* Main interactive viewport wrapper with micro animations */}
       <main className="flex-grow">

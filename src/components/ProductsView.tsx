@@ -14,20 +14,13 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string>('All');
   
-  const tags = ['All', 'Ferro Silicon', 'Cored Wire', 'Magnesium', 'Inoculants', 'Powder'];
+  const tags = ['All', 'Ferrosilicon Magnesium', 'Inoculants & Cored Wire', 'Nickel Magnesium', 'Mould Powder'];
 
   const filteredProducts = PRODUCTS.filter((p) => {
-    const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          p.shortDesc.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          p.physicalState.toLowerCase().includes(searchQuery.toLowerCase());
-    
+    const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          p.shortDesc.toLowerCase().includes(searchQuery.toLowerCase());
     if (selectedTag === 'All') return matchesSearch;
-    if (selectedTag === 'Ferro Silicon') return matchesSearch && p.name.toLowerCase().includes('ferro silicon') || p.name.toLowerCase().includes('fesimg');
-    if (selectedTag === 'Cored Wire') return matchesSearch && p.name.toLowerCase().includes('wire');
-    if (selectedTag === 'Magnesium') return matchesSearch && p.name.toLowerCase().includes('magnesium');
-    if (selectedTag === 'Inoculants') return matchesSearch && p.name.toLowerCase().includes('inoculant');
-    if (selectedTag === 'Powder') return matchesSearch && p.name.toLowerCase().includes('powder');
-    return matchesSearch;
+    return matchesSearch && p.name === selectedTag;
   });
 
 
@@ -47,8 +40,8 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
           <div className="w-20 h-1.5 bg-industrial-red rounded"></div>
         </div>
         
-        {/* Search controls */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full md:max-w-md">
+        {/* Search + Download */}
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:max-w-lg items-center">
           <div className="relative flex-grow">
             <Search className="absolute left-3.5 top-3 text-slate-400" size={18} />
             <input
@@ -60,6 +53,13 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
               id="search-alloys-input"
             />
           </div>
+          <a
+            href={`${import.meta.env.BASE_URL}FeX Catalogue 2026.pdf`}
+            download="FeX Catalogue 2026.pdf"
+            className="whitespace-nowrap bg-brand-primary text-white font-sans text-xs tracking-wider uppercase font-bold py-2.5 px-5 hover:bg-industrial-red transition-all duration-200 cursor-pointer flex items-center gap-2 rounded"
+          >
+            Download Catalogue
+          </a>
         </div>
       </div>
 
@@ -110,9 +110,21 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
                       {p.name}
                     </h3>
                   </div>
-                  <p className="font-sans text-xs text-slate-500 leading-relaxed mb-6 line-clamp-3">
+                  <p className="font-sans text-xs text-slate-500 leading-relaxed mb-4 line-clamp-3">
                     {p.shortDesc}
                   </p>
+                  {p.grades && p.grades.length > 0 && (
+                    <div className="border-t border-slate-100 pt-4">
+                      <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-industrial-red mb-2">Available Grades</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {p.grades.map((grade) => (
+                          <span key={grade} className="text-[10px] font-mono font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
+                            {grade}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })

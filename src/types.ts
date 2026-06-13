@@ -11,6 +11,7 @@ export interface Product {
   physicalState: string;
   standardSize: string;
   image: string;
+  grades?: string[];
 }
 
 export interface Facility {
