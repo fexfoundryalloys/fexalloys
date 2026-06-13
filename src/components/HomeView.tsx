@@ -192,7 +192,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
             <div className="w-16 h-1 bg-industrial-red rounded"></div>
             <div className="space-y-1 pt-2">
               <p className="font-display text-2xl md:text-3xl font-extrabold text-white">
-                60,000 MT <span className="text-surface-variant font-light text-xl">in Ahmedabad</span>
+                60,000 MT/year <span className="text-surface-variant font-light text-xl">in Ahmedabad</span>
               </p>
               <div className="flex items-center gap-3 pt-4">
                 <span className="text-xs uppercase tracking-widest font-bold text-surface-variant font-mono">Expected Launch</span>
