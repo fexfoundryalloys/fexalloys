@@ -88,10 +88,11 @@ export default function Navbar({ currentTab, setTab, onSelectProduct }: NavbarPr
             className="cursor-pointer hover:opacity-80 transition-opacity shrink-0"
             id="nav-logo"
           >
-            <span className="font-display font-extrabold text-brand-primary tracking-tight leading-none" style={{ fontSize: '1.35rem', letterSpacing: '-0.01em' }}>
-              <span>FeX</span>{' '}
-              <span className="tracking-widest" style={{ fontSize: '1.1rem', letterSpacing: '0.15em' }}>FOUNDRY ALLOYS</span>
-            </span>
+            <img
+              src={`${import.meta.env.BASE_URL}logo/logofexalloys.png`}
+              alt="FeX Foundry Alloys"
+              className="h-8 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Nav Links */}

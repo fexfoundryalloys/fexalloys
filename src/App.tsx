@@ -92,10 +92,11 @@ export default function App() {
                 onClick={() => handleTabChange('home')}
                 className="cursor-pointer hover:opacity-80 transition-opacity inline-block"
               >
-                <span className="font-display font-extrabold text-white tracking-tight leading-none" style={{ fontSize: '1.35rem', letterSpacing: '-0.01em' }}>
-                  <span>FeX</span>{' '}
-                  <span className="tracking-widest" style={{ fontSize: '1.1rem', letterSpacing: '0.15em' }}>FOUNDRY ALLOYS</span>
-                </span>
+                <img
+                  src={`${import.meta.env.BASE_URL}logo/logofexalloys.png`}
+                  alt="FeX Foundry Alloys"
+                  className="h-8 w-auto object-contain brightness-0 invert"
+                />
               </div>
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
                 ISO 9001:2015 Certified manufacturer supplying high-performance nodularisers, customized inoculants, and specialty cored wires to automotive, aeronautical and structural foundries globally.
