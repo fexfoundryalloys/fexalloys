@@ -14,7 +14,7 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string>('All');
   
-  const tags = ['All', 'Ferrosilicon Magnesium', 'Inoculants & Cored Wire', 'Nickel Magnesium', 'Mould Powder'];
+  const tags = ['All', 'Ferrosilicon Magnesium', 'Inoculants', 'Nickel Magnesium', 'Mould Powder', 'Ferro Silicon Magnesium Cored Wire'];
 
   const filteredProducts = PRODUCTS.filter((p) => {
     const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -109,6 +109,9 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
                     <h3 className="font-display font-extrabold text-dark-navy text-sm md:text-base leading-tight">
                       {p.name}
                     </h3>
+                    {p.note && (
+                      <p className="text-[11px] text-slate-400 font-sans mt-1 italic">{p.note}</p>
+                    )}
                   </div>
                   <p className="font-sans text-xs text-slate-500 leading-relaxed mb-4 line-clamp-3">
                     {p.shortDesc}

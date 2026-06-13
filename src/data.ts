@@ -25,7 +25,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'inoc',
-    name: 'Inoculants & Cored Wire',
+    name: 'Inoculants',
     shortDesc: 'Precision inoculants and cored wire solutions for superior metallurgical control.',
     longDesc: 'Inoculants are FeSi based alloys which contain carefully balanced amounts of active elements designed to control the microstructure and mechanical properties of cast irons. Through the correct inoculation of cast irons the formation of chill can be prevented and gas related porosity and shrinkage to a great extent controlled and minimized. Our inoculants are also available as cored wire — a steel-sheathed wire fed into molten iron, releasing the inoculant core evenly for precise, late-stage inoculation in automated foundry lines.',
     image: `${import.meta.env.BASE_URL}products/inoculants.jpeg`,
@@ -64,7 +64,8 @@ export const PRODUCTS: Product[] = [
       { id: 3, text: 'Absorption of non-metallic alumina inclusions from liquid steel.' }
     ].map(a => a.text),
     physicalState: 'Fine Dark Powder or Granules',
-    standardSize: 'Mesh -100 to -200 (Fluidized passing)'
+    standardSize: 'Mesh -100 to -200 (Fluidized passing)',
+    grades: ['XPIPE F', 'XPIPE Y', 'XPIPE A']
   },
   {
     id: 'nimg',
@@ -85,6 +86,18 @@ export const PRODUCTS: Product[] = [
     physicalState: 'Shiny Silver Lumps',
     standardSize: '10-50 mm / 20-80 mm (Packed in 100 kg drums)',
     grades: ['XNIMAG 150', 'XNIMAG 151', 'XNIMAG 190', 'XNIMAG 191']
+  },
+  {
+    id: 'fesm-wire',
+    name: 'Ferro Silicon Magnesium Cored Wire',
+    shortDesc: 'Cored wire solution for precise FeSiMg treatment in ductile iron production.',
+    longDesc: 'Ferro Silicon Magnesium Cored Wire is a steel-sheathed wire with a core of Ferrosilicon Magnesium alloy. It is fed into molten iron using a wire injection system, where the steel sheath melts and releases the FeSiMg core uniformly into the melt. This method ensures precise Magnesium recovery, reduces fume emission, and provides consistent nodularisation results compared to conventional ladle treatment methods.',
+    image: `${import.meta.env.BASE_URL}products/ferrosiliconmagnesiumcoredwire.png`,
+    specifications: [],
+    applications: [],
+    physicalState: 'Wire Coils',
+    standardSize: 'Diameter 9mm or 13mm',
+    note: 'Available in 9mm, 13mm & as per customer requirement wire dia'
   },
 ];
 

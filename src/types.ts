@@ -12,6 +12,7 @@ export interface Product {
   standardSize: string;
   image: string;
   grades?: string[];
+  note?: string;
 }
 
 export interface Facility {

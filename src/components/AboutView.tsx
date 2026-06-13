@@ -23,8 +23,7 @@ export default function AboutView() {
       <div className="text-center md:text-left space-y-3">
         <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Our Heritage</span>
         <h1 className="font-display text-3xl md:text-5xl font-extrabold text-brand-primary">FeX Foundry Alloys Pvt Ltd</h1>
-        <p className="text-xs text-slate-500 font-mono">(Formerly known as Akshit Enterprises Pvt Ltd)</p>
-        <div className="w-20 h-1.5 bg-industrial-red rounded"></div>
+<div className="w-20 h-1.5 bg-industrial-red rounded"></div>
       </div>
 
       {/* Company Snapshot */}

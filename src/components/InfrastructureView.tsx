@@ -5,7 +5,7 @@ import { CheckCircle } from 'lucide-react';
 const highlights = [
   'Three induction furnaces with capacities of 500 kg, 750 kg, and 1500 kg',
   'Overhead cranes for seamless operations',
-  'Melting capacity of over 25,000 MT per year',
+  'Melting capacity of over 18,000 MT per year',
   'In-house testing laboratory upholding international standards',
   'Timely delivery backed by high-capacity production infrastructure',
 ];
@@ -47,7 +47,7 @@ export default function InfrastructureView() {
             <p className="text-slate-700 text-base md:text-lg leading-relaxed">
               Our manufacturing facility is equipped with advanced technology, featuring three induction furnaces
               with capacities of 500 kg, 750 kg, and 1500 kg, supported by overhead cranes for seamless operations.
-              With a melting capacity of over 25,000 MT per year, we ensure timely delivery to our clients.
+              With a melting capacity of over 18,000 MT per year, we ensure timely delivery to our clients.
               Our in-house testing laboratory upholds international standards and customer specifications,
               guaranteeing the highest quality in every product we deliver.
             </p>
@@ -81,7 +81,7 @@ export default function InfrastructureView() {
             <span className="text-xs tracking-wider text-slate-400 uppercase font-medium">Max Furnace Capacity</span>
           </div>
           <div className="py-4 md:py-0 px-4">
-            <span className="block font-display text-3xl font-extrabold text-white mb-1">25,000 MT</span>
+            <span className="block font-display text-3xl font-extrabold text-white mb-1">18,000 MT</span>
             <span className="text-xs tracking-wider text-slate-400 uppercase font-medium">Annual Output</span>
           </div>
           <div className="py-4 md:py-0 px-4">
