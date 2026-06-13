@@ -236,8 +236,8 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
           <h2 className="font-display text-xl md:text-2xl font-bold text-white text-center md:text-left">
             Looking for high-quality foundry alloys? Let's talk.
           </h2>
-          <button 
-            onClick={() => setTab('enquiry')}
+          <button
+            onClick={() => { setTab('enquiry'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="bg-white text-industrial-red font-sans text-xs tracking-wider uppercase font-extrabold py-4 px-8 text-center hover:bg-slate-100 hover:scale-105 transition-all duration-200 shadow-md whitespace-nowrap cursor-pointer"
           >
             Get In Touch
