@@ -9,11 +9,15 @@ import QualityView from './components/QualityView';
 import GlobalPresenceView from './components/GlobalPresenceView';
 import EnquiryForm from './components/EnquiryForm';
 import CareersView from './components/CareersView';
+import CatalogueModal from './components/CatalogueModal';
 import { Product } from './types';
 
 export default function App() {
   const [currentTab, setTab] = useState<string>('home');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [catalogueModalOpen, setCatalogueModalOpen] = useState(false);
+
+  const catalogueUrl = `${import.meta.env.BASE_URL}FeX Catalogue 2026.pdf`;
 
   // High-fidelity transition wrapper
   const renderTabContent = () => {
@@ -27,6 +31,7 @@ export default function App() {
               setTab('products');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
+            onOpenCatalogueModal={() => setCatalogueModalOpen(true)}
           />
         );
       case 'about':
@@ -37,6 +42,7 @@ export default function App() {
             selectedProduct={selectedProduct}
             setSelectedProduct={setSelectedProduct}
             setTab={(tab) => setTab(tab)}
+            onOpenCatalogueModal={() => setCatalogueModalOpen(true)}
           />
         );
       case 'infra':
@@ -50,7 +56,7 @@ export default function App() {
       case 'enquiry':
         return <EnquiryForm />;
       default:
-        return <HomeView setTab={setTab} onSelectProduct={setSelectedProduct} />;
+        return <HomeView setTab={setTab} onSelectProduct={setSelectedProduct} onOpenCatalogueModal={() => setCatalogueModalOpen(true)} />;
     }
   };
 
@@ -61,6 +67,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-bg-warm font-sans text-on-surface antialiased pt-20 flex flex-col justify-between selection:bg-industrial-red selection:text-white">
+      <CatalogueModal
+        isOpen={catalogueModalOpen}
+        onClose={() => setCatalogueModalOpen(false)}
+        catalogueUrl={catalogueUrl}
+      />
       {/* Top Navigation Panel */}
       <Navbar currentTab={currentTab} setTab={setTab} onSelectProduct={(product) => { setSelectedProduct(product); setTab('products'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} />
 

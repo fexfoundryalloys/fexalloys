@@ -8,9 +8,10 @@ interface ProductsViewProps {
   selectedProduct: Product | null;
   setSelectedProduct: (product: Product | null) => void;
   setTab: (tab: string) => void;
+  onOpenCatalogueModal: () => void;
 }
 
-export default function ProductsView({ selectedProduct, setSelectedProduct, setTab }: ProductsViewProps) {
+export default function ProductsView({ selectedProduct, setSelectedProduct, setTab, onOpenCatalogueModal }: ProductsViewProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string>('All');
   
@@ -53,13 +54,12 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
               id="search-alloys-input"
             />
           </div>
-          <a
-            href={`${import.meta.env.BASE_URL}FeX Catalogue 2026.pdf`}
-            download="FeX Catalogue 2026.pdf"
+          <button
+            onClick={onOpenCatalogueModal}
             className="whitespace-nowrap bg-brand-primary text-white font-sans text-xs tracking-wider uppercase font-bold py-2.5 px-5 hover:bg-industrial-red transition-all duration-200 cursor-pointer flex items-center gap-2 rounded"
           >
             Download Catalogue
-          </a>
+          </button>
         </div>
       </div>
 

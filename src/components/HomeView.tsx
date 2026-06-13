@@ -7,9 +7,10 @@ import { Product } from '../types';
 interface HomeViewProps {
   setTab: (tab: string) => void;
   onSelectProduct: (product: Product) => void;
+  onOpenCatalogueModal: () => void;
 }
 
-export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
+export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal }: HomeViewProps) {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
 
   const homeProducts = PRODUCTS;
@@ -48,13 +49,12 @@ export default function HomeView({ setTab, onSelectProduct }: HomeViewProps) {
               >
                 Contact Us
               </button>
-              <a
-                href={`${import.meta.env.BASE_URL}FeX Catalogue 2026.pdf`}
-                download="FeX Catalogue 2026.pdf"
+              <button
+                onClick={onOpenCatalogueModal}
                 className="bg-transparent text-white font-sans text-xs tracking-wider uppercase font-bold py-4 px-8 text-center hover:bg-white hover:text-brand-primary transition-all duration-300 border-2 border-white/50 active:scale-95 cursor-pointer flex items-center justify-center gap-2"
               >
                 Download Catalogue
-              </a>
+              </button>
             </div>
           </motion.div>
           <motion.div 

@@ -1,25 +1,52 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Send, CheckCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { Send, CheckCircle, Mail, Phone, MapPin, Loader2, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+const EMAILJS_SERVICE_ID = 'service_dnazwdl';
+const EMAILJS_TEMPLATE_ID = 'template_lnalg16';
+const EMAILJS_PUBLIC_KEY = 'cmU1HRr_2S6TTlXiv';
 
 export default function EnquiryForm() {
   const [fullName, setFullName] = useState('');
   const [designation, setDesignation] = useState('');
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [description, setDescription] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName.trim() || !email.trim()) return;
-    setSubmitted(true);
-    setFullName('');
-    setDesignation('');
-    setCompany('');
-    setEmail('');
-    setDescription('');
-    setTimeout(() => setSubmitted(false), 6000);
+    setStatus('sending');
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: fullName,
+          designation,
+          company,
+          reply_to: email,
+          phone,
+          message: description,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus('success');
+      setFullName('');
+      setDesignation('');
+      setCompany('');
+      setEmail('');
+      setPhone('');
+      setDescription('');
+      setTimeout(() => setStatus('idle'), 6000);
+    } catch {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   const inputClass = "w-full bg-slate-50 border border-slate-200 py-3 px-4 rounded text-sm text-slate-800 focus:outline-none focus:border-industrial-red transition-colors placeholder:text-slate-400";
@@ -152,6 +179,17 @@ export default function EnquiryForm() {
             </div>
 
             <div>
+              <label className={labelClass}>Phone</label>
+              <input
+                type="tel"
+                placeholder="+91 XXXXX XXXXX"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className={inputClass}
+              />
+            </div>
+
+            <div>
               <label className={labelClass}>Description</label>
               <textarea
                 rows={5}
@@ -164,15 +202,20 @@ export default function EnquiryForm() {
 
             <button
               type="submit"
-              className="w-full bg-industrial-red hover:bg-secondary-red text-white py-3.5 px-6 font-sans text-xs uppercase tracking-widest font-extrabold transition-all duration-200 rounded flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer"
+              disabled={status === 'sending'}
+              className="w-full bg-industrial-red hover:bg-secondary-red text-white py-3.5 px-6 font-sans text-xs uppercase tracking-widest font-extrabold transition-all duration-200 rounded flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              <Send size={14} /> Send Message
+              {status === 'sending' ? (
+                <><Loader2 size={14} className="animate-spin" /> Sending...</>
+              ) : (
+                <><Send size={14} /> Send Message</>
+              )}
             </button>
 
           </form>
 
           <AnimatePresence>
-            {submitted && (
+            {status === 'success' && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -183,6 +226,20 @@ export default function EnquiryForm() {
                 <div>
                   <h4 className="font-display font-bold text-emerald-900 text-sm">Message Sent!</h4>
                   <p className="text-xs text-emerald-700 mt-1">Thank you for reaching out. We'll get back to you shortly.</p>
+                </div>
+              </motion.div>
+            )}
+            {status === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className="mt-5 bg-red-50 border-2 border-red-300 rounded p-4 flex items-start gap-3"
+              >
+                <AlertCircle className="text-red-500 shrink-0 mt-0.5" size={20} />
+                <div>
+                  <h4 className="font-display font-bold text-red-900 text-sm">Failed to send</h4>
+                  <p className="text-xs text-red-700 mt-1">Please try again or email us directly at sales@fexalloys.com</p>
                 </div>
               </motion.div>
             )}
