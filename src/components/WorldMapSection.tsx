@@ -20,6 +20,8 @@ const HIGHLIGHTED = [
   'India',
   // Additional
   'Mexico', 'Brazil', 'Malaysia', 'Indonesia', 'South Africa', 'Morocco',
+  // Russia
+  'Russia',
 ];
 
 const MARKERS: { name: string; coordinates: [number, number] }[] = [
@@ -35,6 +37,7 @@ const MARKERS: { name: string; coordinates: [number, number] }[] = [
   { name: 'Indonesia', coordinates: [118, -2] },
   { name: 'S. Africa', coordinates: [25, -29] },
   { name: 'Morocco', coordinates: [-7, 32] },
+  { name: 'Russia', coordinates: [60, 60] },
 ];
 
 export default function WorldMapSection() {
@@ -45,7 +48,7 @@ export default function WorldMapSection() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="text-center mb-2">
           <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Global Reach</span>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-white mt-2">Trusted in 35+ Countries</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white mt-2">Trusted in 40+ Countries</h2>
           <p className="text-slate-400 text-sm mt-2">Supplying premium foundry alloys across automotive, energy and heavy engineering sectors worldwide</p>
         </div>
 
@@ -108,7 +111,7 @@ export default function WorldMapSection() {
 
         {/* Country tags */}
         <div className="flex flex-wrap justify-center gap-2 mt-2">
-          {['USA', 'UK', 'European Union', 'Turkey', 'Middle East', 'India', 'Mexico', 'Brazil', 'Malaysia', 'Indonesia', 'South Africa', 'Morocco', '& more'].map((c) => (
+          {['USA', 'UK', 'European Union', 'Turkey', 'Middle East', 'India', 'Russia', 'Mexico', 'Brazil', 'Malaysia', 'Indonesia', 'South Africa', 'Morocco', '& more'].map((c) => (
             <span key={c} className="text-xs font-mono font-semibold bg-white/10 text-slate-300 px-3 py-1 rounded-full border border-white/10">
               {c}
             </span>
