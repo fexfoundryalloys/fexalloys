@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, ChevronRight, Star, ShieldCheck, Factory, Award, ZoomIn, X } from 'lucide-react';
+import { ArrowRight, ChevronRight, Star, ShieldCheck, Factory, Award, ZoomIn, X, Car, Wind, Train, Settings2, Droplets, Cylinder } from 'lucide-react';
 import { PRODUCTS } from '../data';
 import { Product } from '../types';
 
@@ -29,6 +29,11 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
+            <img
+              src={`${import.meta.env.BASE_URL}logo/logoicon.png`}
+              alt="FeX"
+              className="h-16 w-auto object-contain"
+            />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
               Engineered Foundry Alloys. Consistent Chemistry. Global Delivery.
             </h1>
@@ -130,7 +135,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
         </div>
       </section>
 
-      {/* SECTION 5 - PRODUCTS GRID */}
+      {/* SECTION 4 - PRODUCTS GRID */}
       <section className="bg-surface-low py-20 md:py-28 w-full" id="products-grid-section">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full">
           <div className="text-center mb-16">
@@ -223,7 +228,34 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
         </div>
       </section>
 
-      {/* SECTION 6 - UPCOMING FACILITY */}
+      {/* SECTION 6 - INDUSTRIES SERVED */}
+      <section className="bg-surface-low py-16 w-full border-b border-slate-200" id="industries-section">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full">
+          <div className="text-center mb-10">
+            <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Industries Served</span>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-dark-navy mt-2">Built for the Foundry Industry</h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            {[
+              { label: 'Automotive Foundries', icon: <Car size={24} /> },
+              { label: 'Pipe Foundries', icon: <Cylinder size={24} /> },
+              { label: 'Wind Energy Castings', icon: <Wind size={24} /> },
+              { label: 'Railways', icon: <Train size={24} /> },
+              { label: 'Heavy Engineering', icon: <Settings2 size={24} /> },
+              { label: 'Pumps & Valves', icon: <Droplets size={24} /> },
+            ].map((industry) => (
+              <div key={industry.label} className="flex flex-col items-center text-center bg-white border border-slate-200 rounded-lg p-5 hover:shadow-md hover:border-industrial-red/30 transition-all duration-200 gap-3">
+                <div className="w-12 h-12 rounded-full bg-industrial-red/10 flex items-center justify-center text-industrial-red">
+                  {industry.icon}
+                </div>
+                <p className="font-display font-bold text-dark-navy text-xs leading-snug">{industry.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7 - UPCOMING FACILITY */}
       <section className="w-full bg-[#031534] overflow-hidden relative" id="upcoming-facility-section">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
           {/* Left — text */}

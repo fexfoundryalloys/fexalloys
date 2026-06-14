@@ -101,12 +101,17 @@ export default function App() {
             <div className="md:col-span-4 space-y-6">
               <div
                 onClick={() => handleTabChange('home')}
-                className="cursor-pointer hover:opacity-80 transition-opacity inline-block"
+                className="cursor-pointer hover:opacity-80 transition-opacity inline-flex items-center gap-3"
               >
+                <img
+                  src={`${import.meta.env.BASE_URL}logo/logoicon.png`}
+                  alt="FeX"
+                  className="h-8 w-auto object-contain"
+                />
                 <img
                   src={`${import.meta.env.BASE_URL}logo/logofexalloys.png`}
                   alt="FeX Foundry Alloys"
-                  className="h-8 w-auto object-contain brightness-0 invert"
+                  className="h-6 w-auto object-contain brightness-0 invert"
                 />
               </div>
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
