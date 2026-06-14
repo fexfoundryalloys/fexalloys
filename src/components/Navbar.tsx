@@ -131,7 +131,7 @@ export default function Navbar({ currentTab, setTab, onSelectProduct }: NavbarPr
               onClick={() => handleTabClick('enquiry')}
               className="font-sans text-xs tracking-wider uppercase font-bold bg-industrial-red hover:bg-secondary-red text-white py-3 px-6 transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
             >
-              ENQUIRE NOW
+              CONTACT US
             </button>
           </div>
 
@@ -225,7 +225,7 @@ export default function Navbar({ currentTab, setTab, onSelectProduct }: NavbarPr
                 onClick={() => handleTabClick('enquiry')}
                 className="font-sans text-sm tracking-wider uppercase font-bold bg-industrial-red text-white py-3 px-6 text-center shadow-md block w-full"
               >
-                ENQUIRE NOW
+                CONTACT US
               </button>
             </div>
           </div>
