@@ -74,7 +74,11 @@ export default function AboutView() {
           <div className="absolute top-4 right-4 text-surface-variant font-display text-8xl font-extrabold select-none opacity-20">"</div>
           <h3 className="font-display text-lg font-bold text-dark-navy mb-4">A Message from the CEO</h3>
           <p className="text-slate-600 text-sm leading-relaxed italic mb-6">
-            "An alloy is more than just raw components thrown together in heat. It is a formula of trust. When a bridge casting or a wind turbine shaft depends on ductile sound structure, there is zero room for trace magnesium variability. That is why at FeX, every ounce of material undergoes chemical audit prior to ship."
+            "At FeX, we understand that every alloy carries a responsibility. The products we manufacture become part of critical castings used in infrastructure, energy, transportation, and engineering applications where consistency is essential and failure is not an option.
+            <br /><br />
+            That is why quality is embedded into every stage of our process — from raw material selection to final chemical verification. Our goal is not simply to meet specifications, but to deliver confidence with every shipment.
+            <br /><br />
+            For more than two decades, customers across the world have trusted FeX for dependable metallurgical solutions built on precision, consistency, and integrity."
           </p>
           <div className="border-t border-slate-100 pt-4">
             <h5 className="font-display font-extrabold text-dark-navy text-sm">Achal Garg</h5>
