@@ -117,17 +117,6 @@ export default function App() {
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
                 ISO 9001:2015 Certified manufacturer supplying high-performance nodularisers, customized inoculants, and specialty cored wires to automotive, aeronautical and structural foundries globally.
               </p>
-              <div className="border-t border-white/10 pt-4">
-                <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#C0202A] mb-2">German Collaboration</p>
-                <a
-                  href="https://www.fesil-deutschland.de"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-400 text-xs hover:text-white transition-colors leading-relaxed"
-                >
-                  FESIL — Hochwertige Schmelzzusätze für die Gießereiindustrie ↗
-                </a>
-              </div>
             </div>
 
             {/* Column 2 - Quick Links */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, ChevronRight, Star, ShieldCheck, Factory, Award, ZoomIn, X, Car, Wind, Train, Settings2, Droplets, Cylinder } from 'lucide-react';
+import WorldMapSection from './WorldMapSection';
 import { PRODUCTS } from '../data';
 import { Product } from '../types';
 
@@ -117,13 +118,28 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
             <p className="font-sans text-sm text-slate-500 italic">
               Our advanced induction platforms refine trace metallic elements down to decimal deviations.
             </p>
-            <button 
-              onClick={() => { setTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="inline-flex items-center font-sans text-xs tracking-wider uppercase font-bold text-industrial-red hover:text-dark-navy transition-all duration-200 group mt-4 cursor-pointer"
-            >
-              Read Our Story 
-              <ArrowRight className="ml-2 transform group-hover:translate-x-1.5 transition-transform text-lg" size={16} />
-            </button>
+            <div className="flex flex-col gap-6 mt-4">
+              <button
+                onClick={() => { setTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                className="inline-flex items-center font-sans text-xs tracking-wider uppercase font-bold text-industrial-red hover:text-dark-navy transition-all duration-200 group cursor-pointer"
+              >
+                Read Our Story
+                <ArrowRight className="ml-2 transform group-hover:translate-x-1.5 transition-transform text-lg" size={16} />
+              </button>
+
+              <a
+                href="https://www.fesil-deutschland.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-4 border border-slate-200 rounded-lg px-4 py-3 hover:border-industrial-red hover:shadow-md transition-all duration-200 self-start"
+              >
+                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-sm">🇩🇪</div>
+                <div>
+                  <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-industrial-red">German Collaboration</p>
+                  <p className="text-dark-navy text-sm font-display font-bold leading-snug">FESIL Deutschland ↗</p>
+                </div>
+              </a>
+            </div>
           </div>
           <div className="border border-surface-variant p-3 bg-surface-low rounded shadow-md group overflow-hidden">
             <img
@@ -255,7 +271,10 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
         </div>
       </section>
 
-      {/* SECTION 7 - UPCOMING FACILITY */}
+      {/* SECTION 7 - WORLD MAP */}
+      <WorldMapSection />
+
+      {/* SECTION 8 - UPCOMING FACILITY */}
       <section className="w-full bg-[#031534] overflow-hidden relative" id="upcoming-facility-section">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
           {/* Left — text */}
