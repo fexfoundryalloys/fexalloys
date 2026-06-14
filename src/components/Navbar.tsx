@@ -88,11 +88,9 @@ export default function Navbar({ currentTab, setTab, onSelectProduct }: NavbarPr
             className="cursor-pointer hover:opacity-80 transition-opacity shrink-0"
             id="nav-logo"
           >
-            <img
-              src={`${import.meta.env.BASE_URL}logo/logofexalloys.png`}
-              alt="FeX Foundry Alloys"
-              className="h-8 w-auto object-contain"
-            />
+            <span className="text-dark-navy select-none" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '22px', fontWeight: 700, letterSpacing: '0.04em' }}>
+              FeX Foundry Alloys
+            </span>
           </div>
 
           {/* Desktop Nav Links */}
