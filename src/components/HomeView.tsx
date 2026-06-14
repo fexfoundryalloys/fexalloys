@@ -19,8 +19,10 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
 
   return (
     <div id="home-view" className="w-full">
+      {/* HERO + STATS wrapper — together they fill exactly one viewport */}
+      <div className="flex flex-col w-full" style={{ minHeight: 'calc(100vh - 80px)' }}>
       {/* SECTION 1 - HERO */}
-      <section className="bg-[#1A2A4A] py-12 w-full relative overflow-hidden flex items-center min-h-[calc(100vh-180px)]" id="hero-section">
+      <section className="bg-[#1A2A4A] py-10 w-full relative overflow-hidden flex items-center flex-1" id="hero-section">
         {/* Subtle grid pattern background overlay */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -116,6 +118,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
           </div>
         </div>
       </section>
+      </div>{/* end hero+stats viewport wrapper */}
 
       {/* SECTION 3 - ABOUT SNIPPET */}
       <section className="bg-white py-20 md:py-28 w-full" id="about-snippet-section">
