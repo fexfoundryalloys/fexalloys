@@ -120,7 +120,7 @@ export default function EnquiryForm() {
               </div>
               <div>
                 <p className="text-xs font-bold text-dark-navy font-display uppercase tracking-wide mb-1">Email</p>
-                <a href="mailto:sales@fexalloys.com" className="block text-sm text-slate-500 hover:text-industrial-red transition-colors">sales@fexalloys.com</a>
+                <a href="mailto:info@fexalloys.com" className="block text-sm text-slate-500 hover:text-industrial-red transition-colors">info@fexalloys.com</a>
                 <a href="mailto:enquiry@fexalloys.com" className="block text-sm text-slate-500 hover:text-industrial-red transition-colors">enquiry@fexalloys.com</a>
               </div>
             </div>
@@ -240,7 +240,7 @@ export default function EnquiryForm() {
                 <AlertCircle className="text-red-500 shrink-0 mt-0.5" size={20} />
                 <div>
                   <h4 className="font-display font-bold text-red-900 text-sm">Failed to send</h4>
-                  <p className="text-xs text-red-700 mt-1">Please try again or email us directly at sales@fexalloys.com</p>
+                  <p className="text-xs text-red-700 mt-1">Please try again or email us directly at info@fexalloys.com</p>
                 </div>
               </motion.div>
             )}
