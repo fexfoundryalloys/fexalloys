@@ -46,7 +46,7 @@ export default function AboutView() {
         <div className="lg:col-span-7 space-y-5 text-slate-700 leading-relaxed text-sm md:text-base">
           <p className="font-medium text-lg text-slate-900 leading-relaxed">
             Founded in the year 2008, FeX Foundry Alloys Pvt Ltd has a plant with production capacity of
-            1,500 MT/month located in Sonipat, Haryana for manufacturing various high quality premium
+            25,000 MT/Year located in Sonipat, Haryana for manufacturing various high quality premium
             foundry alloys including various grades of Ferro Silico Magnesium (FeSiMg), Ni-Mg,
             Mould Powders, Inoculants and more.
           </p>

@@ -120,7 +120,8 @@ export default function EnquiryForm() {
               </div>
               <div>
                 <p className="text-xs font-bold text-dark-navy font-display uppercase tracking-wide mb-1">Email</p>
-                <a href="mailto:sales@fexalloys.com" className="text-sm text-slate-500 hover:text-industrial-red transition-colors">sales@fexalloys.com</a>
+                <a href="mailto:sales@fexalloys.com" className="block text-sm text-slate-500 hover:text-industrial-red transition-colors">sales@fexalloys.com</a>
+                <a href="mailto:enquiry@fexalloys.com" className="block text-sm text-slate-500 hover:text-industrial-red transition-colors">enquiry@fexalloys.com</a>
               </div>
             </div>
           </div>

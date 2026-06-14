@@ -3,9 +3,9 @@ import { motion } from 'motion/react';
 import { CheckCircle } from 'lucide-react';
 
 const highlights = [
-  'Three induction furnaces with capacities of 500 kg, 750 kg, and 1500 kg',
+  'Four induction furnaces with capacities of 500 kg, 750 kg, 1500 kg, and 2500 kg',
   'Overhead cranes for seamless operations',
-  'Melting capacity of over 18,000 MT per year',
+  'Melting capacity of over 25,000 MT per year',
   'In-house testing laboratory upholding international standards',
   'Timely delivery backed by high-capacity production infrastructure',
 ];
@@ -45,9 +45,9 @@ export default function InfrastructureView() {
           <div className="space-y-6">
             <div className="w-16 h-1.5 bg-industrial-red rounded"></div>
             <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-              Our manufacturing facility is equipped with advanced technology, featuring three induction furnaces
-              with capacities of 500 kg, 750 kg, and 1500 kg, supported by overhead cranes for seamless operations.
-              With a melting capacity of over 18,000 MT per year, we ensure timely delivery to our clients.
+              Our manufacturing facility is equipped with advanced technology, featuring four induction furnaces
+              with capacities of 500 kg, 750 kg, 1500 kg, and 2500 kg, supported by overhead cranes for seamless operations.
+              With a melting capacity of over 25,000 MT per year, we ensure timely delivery to our clients.
               Our in-house testing laboratory upholds international standards and customer specifications,
               guaranteeing the highest quality in every product we deliver.
             </p>
@@ -73,15 +73,15 @@ export default function InfrastructureView() {
       <div className="bg-brand-primary py-12 w-full">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
           <div className="py-4 md:py-0 px-4">
-            <span className="block font-display text-3xl font-extrabold text-white mb-1">3</span>
+            <span className="block font-display text-3xl font-extrabold text-white mb-1">4</span>
             <span className="text-xs tracking-wider text-slate-400 uppercase font-medium">Induction Furnaces</span>
           </div>
           <div className="py-4 md:py-0 px-4">
-            <span className="block font-display text-3xl font-extrabold text-white mb-1">1500 kg</span>
+            <span className="block font-display text-3xl font-extrabold text-white mb-1">2500 kg</span>
             <span className="text-xs tracking-wider text-slate-400 uppercase font-medium">Max Furnace Capacity</span>
           </div>
           <div className="py-4 md:py-0 px-4">
-            <span className="block font-display text-3xl font-extrabold text-white mb-1">18,000 MT</span>
+            <span className="block font-display text-3xl font-extrabold text-white mb-1">25,000 MT</span>
             <span className="text-xs tracking-wider text-slate-400 uppercase font-medium">Annual Output</span>
           </div>
           <div className="py-4 md:py-0 px-4">

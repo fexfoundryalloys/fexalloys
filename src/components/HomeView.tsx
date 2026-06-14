@@ -32,7 +32,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
               Precision foundry alloys for a stronger world
             </h1>
             <p className="font-sans text-lg text-surface-variant max-w-xl border-l-4 border-industrial-red pl-4 font-light">
-              ISO 9001:2015 Certified | 18,000 MT/Year Capacity | 35+ Countries
+              ISO 9001:2015 Certified | 25,000 MT/Year Capacity | 35+ Countries
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
@@ -82,7 +82,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
               <span className="font-sans text-xs tracking-wider text-surface-variant uppercase font-medium">Founded</span>
             </div>
             <div className="py-4 md:py-0 px-4">
-              <span className="block font-display text-3xl md:text-4xl font-extrabold text-white mb-1">18,000 MT</span>
+              <span className="block font-display text-3xl md:text-4xl font-extrabold text-white mb-1">25,000 MT</span>
               <span className="font-sans text-xs tracking-wider text-surface-variant uppercase font-medium">Annual Capacity</span>
             </div>
             <div className="py-4 md:py-0 px-4">
