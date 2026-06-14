@@ -18,6 +18,8 @@ const HIGHLIGHTED = [
   'United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Kuwait', 'Oman', 'Bahrain', 'Jordan', 'Iraq',
   // India
   'India',
+  // Additional
+  'Mexico', 'Brazil', 'Malaysia', 'Indonesia', 'South Africa', 'Morocco',
 ];
 
 const MARKERS: { name: string; coordinates: [number, number] }[] = [
@@ -27,6 +29,12 @@ const MARKERS: { name: string; coordinates: [number, number] }[] = [
   { name: 'Turkey', coordinates: [35, 39] },
   { name: 'Middle East', coordinates: [47, 25] },
   { name: 'India', coordinates: [78, 22] },
+  { name: 'Mexico', coordinates: [-102, 24] },
+  { name: 'Brazil', coordinates: [-52, -10] },
+  { name: 'Malaysia', coordinates: [109, 4] },
+  { name: 'Indonesia', coordinates: [118, -2] },
+  { name: 'S. Africa', coordinates: [25, -29] },
+  { name: 'Morocco', coordinates: [-7, 32] },
 ];
 
 export default function WorldMapSection() {
@@ -100,7 +108,7 @@ export default function WorldMapSection() {
 
         {/* Country tags */}
         <div className="flex flex-wrap justify-center gap-2 mt-2">
-          {['USA', 'United Kingdom', 'European Union', 'Turkey', 'Middle East', 'India', '& more countries'].map((c) => (
+          {['USA', 'UK', 'European Union', 'Turkey', 'Middle East', 'India', 'Mexico', 'Brazil', 'Malaysia', 'Indonesia', 'South Africa', 'Morocco', '& more'].map((c) => (
             <span key={c} className="text-xs font-mono font-semibold bg-white/10 text-slate-300 px-3 py-1 rounded-full border border-white/10">
               {c}
             </span>

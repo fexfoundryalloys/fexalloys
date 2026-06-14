@@ -20,7 +20,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
   return (
     <div id="home-view" className="w-full">
       {/* SECTION 1 - HERO */}
-      <section className="bg-[#1A2A4A] py-16 md:py-24 w-full relative overflow-hidden flex items-center min-h-[75vh]" id="hero-section">
+      <section className="bg-[#1A2A4A] py-12 w-full relative overflow-hidden flex items-center min-h-[calc(100vh-180px)]" id="hero-section">
         {/* Subtle grid pattern background overlay */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -63,8 +63,21 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
                 Download Catalogue
               </button>
             </div>
+
+            <a
+              href="https://www.fesil-deutschland.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 border border-white/20 rounded-lg px-4 py-2.5 hover:border-white/50 hover:bg-white/5 transition-all duration-200 mt-2 self-start"
+            >
+              <span className="text-lg">🇩🇪</span>
+              <div>
+                <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-industrial-red">German Collaboration</p>
+                <p className="text-white text-xs font-display font-bold">FESIL Deutschland ↗</p>
+              </div>
+            </a>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -81,7 +94,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
       </section>
 
       {/* SECTION 2 - STATS BAR */}
-      <section className="bg-brand-primary border-t border-white/10 py-10 w-full shadow-md" id="stats-section">
+      <section className="bg-brand-primary border-t border-white/10 py-6 w-full shadow-md" id="stats-section">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
             <div className="py-4 md:py-0 px-4">
@@ -118,28 +131,13 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
             <p className="font-sans text-sm text-slate-500 italic">
               Our advanced induction platforms refine trace metallic elements down to decimal deviations.
             </p>
-            <div className="flex flex-col gap-6 mt-4">
-              <button
-                onClick={() => { setTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="inline-flex items-center font-sans text-xs tracking-wider uppercase font-bold text-industrial-red hover:text-dark-navy transition-all duration-200 group cursor-pointer"
-              >
-                Read Our Story
-                <ArrowRight className="ml-2 transform group-hover:translate-x-1.5 transition-transform text-lg" size={16} />
-              </button>
-
-              <a
-                href="https://www.fesil-deutschland.de"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-4 border border-slate-200 rounded-lg px-4 py-3 hover:border-industrial-red hover:shadow-md transition-all duration-200 self-start"
-              >
-                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-sm">🇩🇪</div>
-                <div>
-                  <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-industrial-red">German Collaboration</p>
-                  <p className="text-dark-navy text-sm font-display font-bold leading-snug">FESIL Deutschland ↗</p>
-                </div>
-              </a>
-            </div>
+            <button
+              onClick={() => { setTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              className="inline-flex items-center font-sans text-xs tracking-wider uppercase font-bold text-industrial-red hover:text-dark-navy transition-all duration-200 group cursor-pointer mt-4"
+            >
+              Read Our Story
+              <ArrowRight className="ml-2 transform group-hover:translate-x-1.5 transition-transform text-lg" size={16} />
+            </button>
           </div>
           <div className="border border-surface-variant p-3 bg-surface-low rounded shadow-md group overflow-hidden">
             <img
