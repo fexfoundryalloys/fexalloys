@@ -5,7 +5,7 @@ import { CheckCircle } from 'lucide-react';
 const testingCapabilities = [
   {
     title: 'ED XRF Spectrometer',
-    description: 'Energy Dispersive X-Ray Fluorescence for rapid, non-destructive elemental analysis of alloy composition with high precision.',
+    description: 'Energy Dispersive X-Ray Fluorescence for rapid elemental analysis of alloy composition with high precision.',
   },
   {
     title: 'Wet Chemical Analysis',
