@@ -69,6 +69,42 @@ export default function InfrastructureView() {
         </div>
       </div>
 
+      {/* Packing Standards */}
+      <div className="bg-white w-full">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1 border border-surface-variant p-3 bg-surface-low rounded shadow-md group overflow-hidden">
+            <img
+              src={`${import.meta.env.BASE_URL}packingstandardimage.jpeg`}
+              alt="FeX Foundry Alloys Packing Standards"
+              className="w-full h-full object-cover rounded group-hover:scale-[1.01] transition-transform duration-500"
+            />
+          </div>
+          <div className="order-1 lg:order-2 space-y-6">
+            <div className="w-16 h-1.5 bg-industrial-red rounded"></div>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-dark-navy leading-tight">
+              Packing Standards
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              Every batch of alloy leaving our facility is packed to international shipping standards, ensuring product integrity from our plant to your foundry — whether domestic or export.
+            </p>
+            <ul className="space-y-3">
+              {[
+                'Moisture-proof inner lining to prevent oxidation',
+                'Heavy-duty woven bags and steel drums for lumps and powders',
+                'Clearly labelled with heat number, grade, and chemical composition',
+                'Palletised and shrink-wrapped for safe container loading',
+                'Customised packing available as per customer requirement',
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle className="text-industrial-red shrink-0 mt-0.5" size={16} />
+                  <span className="text-slate-600 text-sm leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
       {/* Stats strip */}
       <div className="bg-brand-primary py-12 w-full">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, SlidersHorizontal, ArrowRight, Sparkles } from 'lucide-react';
+import { Search, SlidersHorizontal, ArrowRight, Sparkles, X, ZoomIn } from 'lucide-react';
 import { PRODUCTS } from '../data';
 import { Product } from '../types';
 
@@ -14,6 +14,7 @@ interface ProductsViewProps {
 export default function ProductsView({ selectedProduct, setSelectedProduct, setTab, onOpenCatalogueModal }: ProductsViewProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState<string>('All');
+  const [zoomedImage, setZoomedImage] = useState<{ src: string; name: string } | null>(null);
   
   const tags = ['All', 'Ferrosilicon Magnesium', 'Inoculants', 'Nickel Magnesium', 'Mould Powder', 'Ferro Silicon Magnesium Cored Wire'];
 
@@ -98,12 +99,18 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
                   }`}
                   id={`product-card-${p.id}`}
                 >
-                  <div className="relative w-24 h-24 rounded-full mx-auto mb-5 bg-slate-50 border-4 border-slate-100 overflow-hidden">
+                  <div
+                    className="relative w-36 h-36 rounded-full mx-auto mb-5 bg-slate-50 border-4 border-slate-100 overflow-hidden cursor-zoom-in group/img"
+                    onClick={(e) => { e.stopPropagation(); setZoomedImage({ src: p.image, name: p.name }); }}
+                  >
                     <img
                       alt={p.name}
                       src={p.image}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110"
                     />
+                    <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                      <ZoomIn className="text-white opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" size={22} />
+                    </div>
                   </div>
                   <div className="mb-3">
                     <h3 className="font-display font-extrabold text-dark-navy text-sm md:text-base leading-tight">
@@ -190,6 +197,43 @@ export default function ProductsView({ selectedProduct, setSelectedProduct, setT
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Image zoom modal */}
+      <AnimatePresence>
+        {zoomedImage && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/80 z-50 cursor-zoom-out"
+              onClick={() => setZoomedImage(null)}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-8 pointer-events-none"
+            >
+              <div className="relative pointer-events-auto max-w-lg w-full">
+                <button
+                  onClick={() => setZoomedImage(null)}
+                  className="absolute -top-4 -right-4 bg-white rounded-full p-1.5 shadow-lg text-slate-700 hover:text-industrial-red transition-colors cursor-pointer z-10"
+                >
+                  <X size={18} />
+                </button>
+                <img
+                  src={zoomedImage.src}
+                  alt={zoomedImage.name}
+                  className="w-full h-auto rounded-lg shadow-2xl object-cover"
+                />
+                <p className="text-white text-center text-sm font-display font-bold mt-4 tracking-wide">{zoomedImage.name}</p>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
     </motion.div>
   );

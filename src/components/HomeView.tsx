@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, ChevronRight, Star, ShieldCheck, Factory, Award } from 'lucide-react';
+import { ArrowRight, ChevronRight, Star, ShieldCheck, Factory, Award, ZoomIn, X } from 'lucide-react';
 import { PRODUCTS } from '../data';
 import { Product } from '../types';
 
@@ -12,6 +12,7 @@ interface HomeViewProps {
 
 export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal }: HomeViewProps) {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
+  const [zoomedImage, setZoomedImage] = useState<{ src: string; name: string } | null>(null);
 
   const homeProducts = PRODUCTS;
 
@@ -29,7 +30,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
             className="space-y-8"
           >
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-              Precision foundry alloys for a stronger world
+              Engineered Foundry Alloys. Consistent Chemistry. Global Delivery.
             </h1>
             <p className="font-sans text-lg text-surface-variant max-w-xl border-l-4 border-industrial-red pl-4 font-light">
               ISO 9001:2015 Certified | 25,000 MT/Year Capacity | 35+ Countries
@@ -102,7 +103,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-dark-navy" id="about-snippet-title">
-              Uncompromising quality in metallurgy
+              Consistent nodularity, controlled chemistry, and reliable performance across SG iron foundries worldwide
             </h2>
             <div className="w-16 h-1.5 bg-industrial-red"></div>
             <p className="font-sans text-base text-on-variant leading-relaxed text-slate-600">
@@ -129,7 +130,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
         </div>
       </section>
 
-      {/* SECTION 4 - PRODUCTS GRID */}
+      {/* SECTION 5 - PRODUCTS GRID */}
       <section className="bg-surface-low py-20 md:py-28 w-full" id="products-grid-section">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full">
           <div className="text-center mb-16">
@@ -149,14 +150,19 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
                 onMouseLeave={() => setHoveredProduct(null)}
               >
                 <div>
-                  <div className="relative w-32 h-32 rounded-full mx-auto mb-6 bg-slate-50 border-4 border-slate-100 flex items-center justify-center overflow-hidden">
-                    <img 
-                      alt={p.name} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-                      src={p.image} 
+                  <div
+                    className="relative w-32 h-32 rounded-full mx-auto mb-6 bg-slate-50 border-4 border-slate-100 overflow-hidden cursor-zoom-in group/img"
+                    onClick={(e) => { e.stopPropagation(); setZoomedImage({ src: p.image, name: p.name }); }}
+                  >
+                    <img
+                      alt={p.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110"
+                      src={p.image}
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-brand-primary/5 hover:bg-transparent transition-colors duration-300"></div>
+                    <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                      <ZoomIn className="text-white opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" size={20} />
+                    </div>
                   </div>
                   <h3 className="font-display text-xl font-bold text-dark-navy mb-3">
                     {p.name}
@@ -180,7 +186,44 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
         </div>
       </section>
 
-      {/* SECTION 5 - UPCOMING FACILITY */}
+      {/* SECTION 5 - CERTIFICATIONS */}
+      <section className="bg-white border-b border-slate-100 py-12 w-full" id="certifications-section">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full">
+          <div className="text-center mb-8">
+            <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Certifications</span>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-dark-navy mt-2">Internationally Certified Quality</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: 'ISO 9001:2015', desc: 'Quality Management System', file: 'ISO 9001.pdf' },
+              { name: 'ISO 14001:2015', desc: 'Environmental Management System', file: 'ISO 14001.pdf' },
+              { name: 'ISO 45001:2018', desc: 'Occupational Health & Safety', file: 'ISO 45001.pdf' },
+            ].map((cert) => (
+              <div key={cert.name} className="flex flex-col items-center text-center border border-slate-200 rounded-lg p-6 bg-slate-50 hover:shadow-md transition-all duration-200 gap-4">
+                <div className="w-14 h-14 rounded-full bg-industrial-red/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-industrial-red">
+                    <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-display font-extrabold text-dark-navy text-base">{cert.name}</h3>
+                  <p className="text-slate-500 text-xs mt-1">{cert.desc}</p>
+                </div>
+                <a
+                  href={`${import.meta.env.BASE_URL}certifications/${cert.file}`}
+                  download={cert.file}
+                  className="mt-auto inline-flex items-center gap-2 bg-brand-primary text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded hover:bg-industrial-red transition-colors duration-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Download Certificate
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6 - UPCOMING FACILITY */}
       <section className="w-full bg-[#031534] overflow-hidden relative" id="upcoming-facility-section">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
           {/* Left — text */}
@@ -244,6 +287,43 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
           </button>
         </div>
       </section>
+      {/* Image zoom modal */}
+      <AnimatePresence>
+        {zoomedImage && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/80 z-50 cursor-zoom-out"
+              onClick={() => setZoomedImage(null)}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-8 pointer-events-none"
+            >
+              <div className="relative pointer-events-auto max-w-lg w-full">
+                <button
+                  onClick={() => setZoomedImage(null)}
+                  className="absolute -top-4 -right-4 bg-white rounded-full p-1.5 shadow-lg text-slate-700 hover:text-industrial-red transition-colors cursor-pointer z-10"
+                >
+                  <X size={18} />
+                </button>
+                <img
+                  src={zoomedImage.src}
+                  alt={zoomedImage.name}
+                  className="w-full h-auto rounded-lg shadow-2xl object-cover"
+                />
+                <p className="text-white text-center text-sm font-display font-bold mt-4 tracking-wide">{zoomedImage.name}</p>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
     </div>
   );
 }
