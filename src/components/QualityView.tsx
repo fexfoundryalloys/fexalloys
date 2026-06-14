@@ -12,10 +12,6 @@ const testingCapabilities = [
     description: 'Classical wet analysis setup for accurate determination of Magnesium, Silicon, Rare Earths, and other key trace elements.',
   },
   {
-    title: 'Spectrographic Analysis',
-    description: 'Optical emission spectrometry for fast multi-element analysis to verify chemistry before and after each heat.',
-  },
-  {
     title: 'Physical Testing',
     description: 'Size grading, moisture content, and bulk density checks on every batch to ensure consistency in lump and powder products.',
   },
