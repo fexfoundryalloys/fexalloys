@@ -103,8 +103,8 @@ export default function App() {
                 onClick={() => handleTabChange('home')}
                 className="cursor-pointer hover:opacity-80 transition-opacity"
               >
-                <span className="text-white select-none" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '21px', fontWeight: 700, letterSpacing: '0.06em' }}>
-                  FeX FOUNDRY ALLOYS
+                <span className="font-display font-black text-lg tracking-wide text-white uppercase select-none">
+                  Fe<span className="text-industrial-red">X</span> FOUNDRY ALLOYS
                 </span>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm">

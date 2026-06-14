@@ -88,8 +88,8 @@ export default function Navbar({ currentTab, setTab, onSelectProduct }: NavbarPr
             className="cursor-pointer hover:opacity-80 transition-opacity shrink-0"
             id="nav-logo"
           >
-            <span className="text-dark-navy select-none" style={{ fontFamily: "'Oswald', sans-serif", fontSize: '21px', fontWeight: 700, letterSpacing: '0.06em' }}>
-              FeX FOUNDRY ALLOYS
+            <span className="font-display font-black text-lg tracking-wide text-dark-navy uppercase select-none">
+              Fe<span className="text-industrial-red">X</span> FOUNDRY ALLOYS
             </span>
           </div>
 
