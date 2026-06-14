@@ -32,10 +32,10 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
             <img
               src={`${import.meta.env.BASE_URL}logo/logoicon.png`}
               alt="FeX"
-              className="h-16 w-auto object-contain"
+              className="h-28 w-auto object-contain"
             />
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-              Engineered Foundry Alloys. Consistent Chemistry. Global Delivery.
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
+              Engineered Foundry Alloys | Consistent Chemistry | Global Delivery
             </h1>
             <p className="font-sans text-lg text-surface-variant max-w-xl border-l-4 border-industrial-red pl-4 font-light">
               ISO 9001:2015 Certified | 25,000 MT/Year Capacity | 35+ Countries
