@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Navbar from './components/Navbar';
-import HomeView from './components/HomeView';
-import AboutView from './components/AboutView';
-import ProductsView from './components/ProductsView';
-import InfrastructureView from './components/InfrastructureView';
-import QualityView from './components/QualityView';
-import GlobalPresenceView from './components/GlobalPresenceView';
-import EnquiryForm from './components/EnquiryForm';
-import CareersView from './components/CareersView';
 import CatalogueModal from './components/CatalogueModal';
 import { Product } from './types';
+
+const HomeView = lazy(() => import('./components/HomeView'));
+const AboutView = lazy(() => import('./components/AboutView'));
+const ProductsView = lazy(() => import('./components/ProductsView'));
+const InfrastructureView = lazy(() => import('./components/InfrastructureView'));
+const QualityView = lazy(() => import('./components/QualityView'));
+const GlobalPresenceView = lazy(() => import('./components/GlobalPresenceView'));
+const EnquiryForm = lazy(() => import('./components/EnquiryForm'));
+const CareersView = lazy(() => import('./components/CareersView'));
 
 export default function App() {
   const [currentTab, setTab] = useState<string>('home');
@@ -77,18 +78,20 @@ export default function App() {
 
       {/* Main interactive viewport wrapper with micro animations */}
       <main className="flex-grow">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentTab}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="w-full"
-          >
-            {renderTabContent()}
-          </motion.div>
-        </AnimatePresence>
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-industrial-red border-t-transparent rounded-full animate-spin"></div></div>}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentTab}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="w-full"
+            >
+              {renderTabContent()}
+            </motion.div>
+          </AnimatePresence>
+        </Suspense>
       </main>
 
       {/* Elegant Industrial Footer matching high corporate design */}
