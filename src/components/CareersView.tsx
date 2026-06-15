@@ -1,75 +1,51 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { MapPin, Briefcase, ChevronDown, ChevronUp, CheckCircle, Mail } from 'lucide-react';
+import React from 'react';
+import { motion } from 'motion/react';
+import { CheckCircle, Mail, MapPin, Zap, TrendingUp, Globe, Lightbulb, Award } from 'lucide-react';
 
-const openings = [
+const hiringAreas = [
   {
-    id: 'executive-assistant-ceo',
-    title: 'Executive Assistant to CEO',
-    plant: 'Corporate Office',
-    location: 'Shalimar Bagh, New Delhi',
-    experience: '5–10 years',
-    tag: 'Leadership Support',
-    responsibilities: [
-      'Provide high-level administrative and strategic support to the CEO',
-      'Manage complex calendars, meetings, travel arrangements, and itineraries',
-      'Prepare reports, presentations, and correspondence on behalf of the CEO',
-      'Act as a liaison between the CEO and internal/external stakeholders',
-      'Track key projects, follow-ups, and ensure timely execution',
-      'Maintain confidentiality of sensitive information at all times',
-      'Support decision-making through data organization and insights',
-    ],
-    requirements: [
-      'Proven experience supporting senior executives or CXO-level leadership',
-      'Exceptional communication and interpersonal skills',
-      'Strong organizational and multitasking abilities',
-      'Proficiency in MS Office (PowerPoint, Excel, Word)',
-      'Ability to work independently with a high level of ownership',
-      'Professional discretion and integrity',
-    ],
-    offer: [
-      'Opportunity to work closely with top leadership',
-      'High-impact role with strategic exposure',
-      'Dynamic and growth-oriented work environment',
-    ],
-    email: 'info@fexalloys.com',
+    dept: 'Manufacturing & Operations',
+    roles: ['Plant Head', 'Production Managers', 'Shift Engineers', 'Furnace Operators', 'Production Supervisors'],
   },
   {
-    id: 'ops-excellence-manager',
-    title: 'Operational Excellence Manager',
-    plant: 'Sonipat Plant',
-    location: 'Sonipat, Haryana',
-    experience: '4–10 years (Manufacturing/Operations)',
-    tag: 'Operations',
-    responsibilities: [
-      'Lead and implement Operational Excellence initiatives across plant operations',
-      'Drive Lean, Six Sigma, and continuous improvement methodologies',
-      'Identify process gaps, inefficiencies, and cost-saving opportunities',
-      'Monitor KPIs and develop strategies to improve productivity and quality',
-      'Collaborate with cross-functional teams (Production, Quality, Supply Chain)',
-      'Standardize processes and ensure adherence to best practices',
-      'Conduct training and capability-building programs for teams',
-      'Support digital transformation and automation initiatives',
-    ],
-    requirements: [
-      'Strong background in manufacturing operations and process improvement',
-      'Certification in Lean Green Belt / ISO QMS & EMS',
-      'Analytical mindset with problem-solving expertise',
-      'Proven track record of driving efficiency and cost optimization',
-      'Excellent leadership and stakeholder management skills',
-    ],
-    offer: [
-      'Opportunity to lead transformation at a high-capacity plant',
-      'Strategic role with visible impact on business performance',
-      'Growth-oriented and innovation-driven environment',
-    ],
-    email: 'info@fexalloys.com',
+    dept: 'Quality & R&D',
+    roles: ['Quality Assurance Manager', 'Metallurgical Engineers', 'Laboratory Technicians', 'Product Development Engineers'],
+  },
+  {
+    dept: 'Maintenance & Utilities',
+    roles: ['Mechanical Engineers', 'Electrical Engineers', 'Instrumentation Engineers', 'Maintenance Technicians'],
+  },
+  {
+    dept: 'Supply Chain & Procurement',
+    roles: ['Purchase Managers', 'Store Officers', 'Logistics Coordinators'],
+  },
+  {
+    dept: 'Sales & Business Development',
+    roles: ['Regional Sales Managers', 'Export Managers', 'Technical Sales Engineers'],
+  },
+  {
+    dept: 'Corporate Functions',
+    roles: ['HR Professionals', 'Finance & Accounts', 'IT & ERP Specialists', 'EHS (Environment, Health & Safety) Professionals'],
   },
 ];
 
-export default function CareersView() {
-  const [expanded, setExpanded] = useState<string | null>(null);
+const whyJoin = [
+  { icon: MapPin, text: 'Work at a state-of-the-art manufacturing facility.' },
+  { icon: Award, text: 'Opportunity to contribute to a landmark project in the metallurgical industry.' },
+  { icon: TrendingUp, text: 'Competitive compensation and growth opportunities.' },
+  { icon: Globe, text: 'Exposure to domestic and international markets.' },
+  { icon: Lightbulb, text: 'Innovation-driven and entrepreneurial culture.' },
+];
 
+const facilityProducts = [
+  'FeSiMg Alloys',
+  'Foundry Inoculants',
+  'Continuous Casting Mould Powders',
+  'Nickel Magnesium Alloys',
+  'Cored Wire Products',
+];
+
+export default function CareersView() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -81,141 +57,127 @@ export default function CareersView() {
       {/* Hero */}
       <div className="bg-brand-primary w-full py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:28px_28px]"></div>
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10 space-y-6">
           <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Join Our Team</span>
-          <h1 className="font-display font-extrabold uppercase leading-none tracking-tight mt-2">
-            <span className="block text-white/30" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}>We're</span>
-            <span className="block text-white" style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}>Hiring</span>
+          <h1 className="font-display font-extrabold text-white leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}>
+            Build the Future of Foundry Alloys with FeX
           </h1>
-          <div className="w-16 h-1.5 bg-industrial-red rounded mt-6"></div>
+          <div className="w-16 h-1.5 bg-industrial-red rounded"></div>
+          <div className="max-w-3xl bg-white/5 border border-white/10 rounded-lg p-6 space-y-3">
+            <div className="flex items-start gap-3">
+              <Zap className="text-industrial-red shrink-0 mt-0.5" size={18} />
+              <p className="text-white font-display font-bold text-base leading-relaxed">
+                We're Hiring for India's Largest Integrated Manufacturing Plant for FeSiMg, Inoculants, Mould Powder, Nickel Magnesium & Cored Wire in Ahmedabad.
+              </p>
+            </div>
+            <p className="text-slate-300 text-sm leading-relaxed pl-7">
+              Join a fast-growing team that is transforming the foundry and metallurgical industry through innovation, quality, and global reach.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Openings */}
-      <div className="bg-white w-full">
-        <div className="max-w-4xl mx-auto px-6 md:px-12 py-16 space-y-6">
-
-          <p className="text-slate-500 text-sm">
-            {openings.length} open position{openings.length !== 1 ? 's' : ''} available
-          </p>
-
-          {openings.map((job) => {
-            const isOpen = expanded === job.id;
-            return (
-              <div key={job.id} className="border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-
-                {/* Job header — always visible */}
-                <button
-                  onClick={() => setExpanded(isOpen ? null : job.id)}
-                  className="w-full text-left p-6 flex items-start justify-between gap-4 hover:bg-slate-50 transition-colors cursor-pointer"
-                >
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-industrial-red bg-red-50 px-2 py-0.5 rounded">
-                      {job.tag}
-                    </span>
-                    <h3 className="font-display font-extrabold text-dark-navy text-lg leading-tight">
-                      {job.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 font-medium">{job.plant}</p>
-                    <div className="flex flex-wrap gap-4 pt-1">
-                      <span className="flex items-center gap-1.5 text-xs text-slate-500">
-                        <MapPin size={13} className="text-industrial-red" />
-                        {job.location}
-                      </span>
-                      <span className="flex items-center gap-1.5 text-xs text-slate-500">
-                        <Briefcase size={13} className="text-industrial-red" />
-                        {job.experience}
-                      </span>
-                    </div>
-                  </div>
-                  <span className="shrink-0 mt-1 text-slate-400">
-                    {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </span>
-                </button>
-
-                {/* Expandable details */}
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-8 pt-2 border-t border-slate-100 space-y-8">
-
-                        {/* Responsibilities */}
-                        <div className="space-y-3">
-                          <h4 className="font-display font-bold text-dark-navy text-sm uppercase tracking-wide">Key Responsibilities</h4>
-                          <ul className="space-y-2">
-                            {job.responsibilities.map((r, i) => (
-                              <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600">
-                                <span className="w-1.5 h-1.5 bg-industrial-red rounded-full mt-2 shrink-0"></span>
-                                {r}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Requirements */}
-                        <div className="space-y-3">
-                          <h4 className="font-display font-bold text-dark-navy text-sm uppercase tracking-wide">Requirements</h4>
-                          <ul className="space-y-2">
-                            {job.requirements.map((r, i) => (
-                              <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600">
-                                <CheckCircle size={14} className="text-industrial-red mt-0.5 shrink-0" />
-                                {r}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* What we offer */}
-                        <div className="space-y-3">
-                          <h4 className="font-display font-bold text-dark-navy text-sm uppercase tracking-wide">What We Offer</h4>
-                          <ul className="space-y-2">
-                            {job.offer.map((o, i) => (
-                              <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600">
-                                <span className="w-1.5 h-1.5 bg-industrial-red rounded-full mt-2 shrink-0"></span>
-                                {o}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Apply CTA */}
-                        <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                          <div className="flex items-center gap-3">
-                            <Mail className="text-industrial-red shrink-0" size={18} />
-                            <div>
-                              <p className="text-xs text-slate-500 font-medium">Interested? Share your CV at</p>
-                              <a
-                                href={`mailto:${job.email}`}
-                                className="font-display font-bold text-dark-navy text-sm hover:text-industrial-red transition-colors"
-                              >
-                                {job.email}
-                              </a>
-                            </div>
-                          </div>
-                          <a
-                            href={`mailto:${job.email}?subject=Application – ${job.title}`}
-                            className="bg-industrial-red hover:bg-secondary-red text-white font-sans text-xs uppercase tracking-widest font-extrabold py-3 px-6 transition-all duration-200 shadow-md whitespace-nowrap"
-                          >
-                            Apply Now
-                          </a>
-                        </div>
-
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
+      {/* Why Join FeX */}
+      <div className="bg-white w-full border-b border-slate-100">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-16">
+          <div className="mb-10">
+            <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Reasons to Join</span>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-dark-navy mt-2">Why Join FeX?</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {whyJoin.map(({ icon: Icon, text }, i) => (
+              <div key={i} className="flex items-start gap-4 bg-slate-50 border border-slate-100 rounded-lg p-5 hover:border-industrial-red hover:shadow-sm transition-all duration-200">
+                <div className="w-9 h-9 bg-industrial-red/10 rounded flex items-center justify-center shrink-0">
+                  <Icon className="text-industrial-red" size={18} />
+                </div>
+                <p className="text-slate-600 text-sm leading-relaxed">{text}</p>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Current Hiring Areas */}
+      <div className="bg-slate-50 w-full border-b border-slate-100">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-16">
+          <div className="mb-10">
+            <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Open Positions</span>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-dark-navy mt-2">Current Hiring Areas</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {hiringAreas.map((area) => (
+              <div key={area.dept} className="bg-white border border-slate-200 rounded-lg p-6 space-y-4 hover:border-industrial-red hover:shadow-md transition-all duration-200">
+                <div className="w-8 h-1 bg-industrial-red rounded"></div>
+                <h3 className="font-display font-bold text-dark-navy text-base">{area.dept}</h3>
+                <ul className="space-y-2">
+                  {area.roles.map((role) => (
+                    <li key={role} className="flex items-start gap-2.5 text-sm text-slate-600">
+                      <CheckCircle size={14} className="text-industrial-red mt-0.5 shrink-0" />
+                      {role}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Special Announcement */}
+      <div className="bg-brand-primary w-full">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-16 md:py-20">
+          <div className="max-w-4xl space-y-8">
+            <div>
+              <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Special Announcement</span>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white mt-2">Be Part of a Historic Manufacturing Project</h2>
+            </div>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              FeX is establishing what will be one of India's largest and most advanced facilities dedicated to:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {facilityProducts.map((product) => (
+                <div key={product} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-lg px-4 py-3">
+                  <span className="w-2 h-2 bg-industrial-red rounded-full shrink-0"></span>
+                  <span className="text-white text-sm font-medium">{product}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              We are seeking experienced professionals and ambitious young talent to join us during this exciting expansion phase.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Apply CTA */}
+      <div className="bg-white w-full border-t border-slate-100">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 py-16">
+          <div className="max-w-2xl mx-auto text-center space-y-6">
+            <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Apply Now</span>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-dark-navy">Submit Your CV</h2>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              Send your resume along with your current designation, years of experience, and preferred function to our careers team.
+            </p>
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-8 space-y-4">
+              <Mail className="text-industrial-red mx-auto" size={28} />
+              <p className="text-slate-500 text-sm">Email your CV to</p>
+              <a
+                href="mailto:careers@fexalloys.com?subject=Job Application – FeX Foundry Alloys"
+                className="font-display font-extrabold text-dark-navy text-xl hover:text-industrial-red transition-colors block"
+              >
+                careers@fexalloys.com
+              </a>
+              <a
+                href="mailto:careers@fexalloys.com?subject=Job Application – FeX Foundry Alloys"
+                className="inline-block bg-industrial-red hover:bg-secondary-red text-white font-sans text-xs uppercase tracking-widest font-extrabold py-3 px-8 transition-all duration-200 shadow-md mt-2"
+              >
+                Send Your CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </motion.div>
   );
 }
