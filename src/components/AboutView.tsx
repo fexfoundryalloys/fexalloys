@@ -31,7 +31,7 @@ export default function AboutView() {
         {[
           { label: 'Industry', value: 'Chemical Manufacturing' },
           { label: 'Company Size', value: '201–500 Employees' },
-          { label: 'Headquarters', value: 'Delhi, Haryana' },
+          { label: 'Headquarters', value: 'Delhi' },
           { label: 'Specialties', value: 'Nodulizers, Inoculants, Mould Powder, Preconditioners' },
         ].map((item) => (
           <div key={item.label} className="bg-surface-low border border-surface-variant rounded-lg p-5 space-y-1">
@@ -47,7 +47,7 @@ export default function AboutView() {
           <p className="font-medium text-lg text-slate-900 leading-relaxed">
             Founded in the year 2008, FeX Foundry Alloys Pvt Ltd has a plant with production capacity of
             25,000 MT/Year located in Sonipat, Haryana for manufacturing various high quality premium
-            foundry alloys including various grades of Ferro Silico Magnesium (FeSiMg), Ni-Mg,
+            foundry alloys including various grades of Ferro Silicon Magnesium,
             Mould Powders, Inoculants and more.
           </p>
 
