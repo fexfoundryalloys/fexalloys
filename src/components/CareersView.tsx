@@ -131,9 +131,15 @@ export default function CareersView() {
       </section>
 
       {/* ── MANUFACTURING LANDMARK ── */}
-      <section className="bg-white py-16 md:py-20 border-b border-slate-100">
+      <section className="bg-amber-50 border-y border-amber-100 py-16 md:py-20">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-5">
+            <div className="flex items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 bg-amber-100 border border-amber-300 text-amber-700 text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse inline-block"></span>
+                Upcoming Facility
+              </span>
+            </div>
             <h2 className="font-display font-extrabold text-brand-primary leading-tight uppercase" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)' }}>
               A New Manufacturing Landmark Is Taking Shape
             </h2>
@@ -144,11 +150,11 @@ export default function CareersView() {
             <p className="text-slate-600 text-sm leading-relaxed">
               Designed with modern production systems, advanced quality control laboratories, and industry-leading manufacturing technology, the facility will significantly expand our production capabilities and support our growing global customer base.
             </p>
-            <p className="text-slate-700 text-sm font-bold leading-relaxed">
+            <p className="text-slate-700 text-sm font-bold leading-relaxed border-l-4 border-industrial-red pl-4">
               Now is a unique opportunity to join a project at its foundation and help shape its future.
             </p>
           </div>
-          <div className="rounded overflow-hidden shadow-lg border border-slate-200">
+          <div className="rounded overflow-hidden shadow-lg border border-amber-200">
             <img
               src={`${import.meta.env.BASE_URL}infrastructure.png`}
               alt="FeX New Facility"
