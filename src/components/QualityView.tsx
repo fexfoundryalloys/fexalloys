@@ -13,7 +13,7 @@ const testingCapabilities = [
   },
   {
     title: 'Physical Testing',
-    description: 'Size grading, moisture content, and bulk density checks on every batch to ensure consistency in lump and powder products.',
+    description: 'Size grading, moisture content, and bulk density checks on every batch to ensure consistency in lump and powder products. Sieve analysis for all products and flowability test for mould powder using Hall\'s flowmeter.',
   },
 ];
 
