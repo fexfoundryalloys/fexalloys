@@ -217,15 +217,7 @@ export default function CareersView() {
 
       {/* ── BUILT BY PEOPLE ── */}
       <section className="w-full">
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-3">
-        <div className="relative h-64 lg:h-auto overflow-hidden">
-          <img
-            src={`${import.meta.env.BASE_URL}qualityassuranceimage.jpeg`}
-            alt="FeX Team"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-brand-primary/40"></div>
-        </div>
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2">
         <div className="bg-white px-8 py-12 space-y-5">
           <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Why Work With Us</span>
           <h2 className="font-display font-extrabold text-dark-navy leading-tight text-xl md:text-2xl">
