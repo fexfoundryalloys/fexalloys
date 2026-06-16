@@ -156,7 +156,7 @@ export default function CareersView() {
           </div>
           <div className="rounded overflow-hidden shadow-lg border border-amber-200">
             <img
-              src={`${import.meta.env.BASE_URL}infrastructure.jpeg`}
+              src={`${import.meta.env.BASE_URL}ahmedabadfacility.jpeg`}
               alt="FeX New Facility"
               className="w-full h-72 object-cover"
               style={{ filter: 'brightness(1.0) contrast(1.02)' }}
@@ -179,7 +179,7 @@ export default function CareersView() {
               <div key={loc.city} className="bg-white border border-slate-200 rounded overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
                 <div className="relative h-44 overflow-hidden">
                   <img
-                    src={`${import.meta.env.BASE_URL}${loc.city === 'DELHI' ? 'delhiofficeimage.avif' : loc.city === 'SONIPAT' ? 'sonipatofficeimage.png' : 'infrastructure.jpeg'}`}
+                    src={`${import.meta.env.BASE_URL}${loc.city === 'DELHI' ? 'delhiofficeimage.avif' : loc.city === 'AHMEDABAD' ? 'ahmedabadfacility.jpeg' : 'infrastructure.jpeg'}`}
                     alt={loc.city}
                     className="w-full h-full object-cover"
                   />

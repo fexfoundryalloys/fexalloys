@@ -308,7 +308,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
           <div className="relative block lg:hidden w-full h-52 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-[#031534] via-[#031534]/30 to-transparent z-10"></div>
             <img
-              src={`${import.meta.env.BASE_URL}infrastructure.jpeg`}
+              src={`${import.meta.env.BASE_URL}ahmedabadfacility.jpeg`}
               alt="Upcoming Ahmedabad manufacturing facility"
               className="w-full h-full object-cover grayscale opacity-70"
             />
@@ -317,7 +317,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-r from-[#031534] via-[#031534]/40 to-transparent z-10"></div>
             <img
-              src={`${import.meta.env.BASE_URL}infrastructure.jpeg`}
+              src={`${import.meta.env.BASE_URL}ahmedabadfacility.jpeg`}
               alt="Upcoming Ahmedabad manufacturing facility"
               className="w-full h-full object-cover grayscale opacity-60"
             />
