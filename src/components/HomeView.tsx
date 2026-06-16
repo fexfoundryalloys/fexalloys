@@ -67,7 +67,7 @@ export default function HomeView({ setTab, onSelectProduct, onOpenCatalogueModal
             </div>
 
             <a
-              href="https://www.fesil-deutschland.de"
+              href="https://www.fesil-deutschland.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 border border-white/20 rounded-lg px-4 py-2.5 hover:border-white/50 hover:bg-white/5 transition-all duration-200 mt-2 self-start"
