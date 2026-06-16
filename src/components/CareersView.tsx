@@ -216,9 +216,9 @@ export default function CareersView() {
       </section>
 
       {/* ── BUILT BY PEOPLE ── */}
-      <section className="w-full">
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-white px-8 py-12 space-y-5">
+      <section className="bg-white py-16 md:py-20 border-b border-slate-100">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="space-y-5">
           <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Why Work With Us</span>
           <h2 className="font-display font-extrabold text-dark-navy leading-tight text-xl md:text-2xl">
             Built By People Who Take Pride In Their Work
@@ -231,7 +231,7 @@ export default function CareersView() {
             Whether on the shop floor, in the laboratory, or in the boardroom, every role contributes to delivering products our customers can trust.
           </p>
         </div>
-        <div className="bg-slate-50 px-8 py-12 space-y-5 border-l border-slate-100">
+        <div className="bg-slate-50 px-8 py-10 space-y-5 rounded-lg border border-slate-100">
           <p className="font-display font-bold text-dark-navy text-sm uppercase tracking-wide">We value people who:</p>
           <ul className="space-y-3">
             {weValue.map((item) => (
