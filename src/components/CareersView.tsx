@@ -106,7 +106,7 @@ export default function CareersView() {
             <div className="space-y-4">
               <span className="text-sm tracking-widest font-extrabold text-industrial-red font-mono">Why FeX</span>
               <h2 className="font-display font-extrabold text-dark-navy leading-tight" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.5rem)' }}>
-                More Than A Workplace.<br />A Place To Build Your Legacy.
+                More than a workplace.<br />A place to build your legacy.
               </h2>
               <div className="w-10 h-1 bg-industrial-red rounded"></div>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -178,7 +178,7 @@ export default function CareersView() {
               <div key={loc.city} className="bg-white border border-slate-200 rounded overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
                 <div className="relative h-44 overflow-hidden">
                   <img
-                    src={`${import.meta.env.BASE_URL}infrastructure.png`}
+                    src={`${import.meta.env.BASE_URL}${loc.city === 'DELHI' ? 'delhiofficeimage.avif' : 'infrastructure.png'}`}
                     alt={loc.city}
                     className="w-full h-full object-cover"
                   />
@@ -221,7 +221,7 @@ export default function CareersView() {
         <div className="space-y-5">
           <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Why Work With Us</span>
           <h2 className="font-display font-extrabold text-dark-navy leading-tight text-xl md:text-2xl">
-            Built By People Who Take Pride In Their Work
+            Built by people who take pride in their work
           </h2>
           <div className="w-10 h-1 bg-industrial-red rounded"></div>
           <p className="text-slate-600 text-sm leading-relaxed">
@@ -277,7 +277,7 @@ export default function CareersView() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="max-w-2xl mx-auto text-center space-y-6">
             <span className="text-xs uppercase tracking-widest font-extrabold text-industrial-red font-mono">Apply Now</span>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-dark-navy">Submit Your CV</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-dark-navy">Submit your CV</h2>
             <p className="text-slate-500 text-sm leading-relaxed">
               Send your resume along with your current designation, years of experience, and preferred function to our careers team.
             </p>
