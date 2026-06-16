@@ -104,7 +104,7 @@ export default function CareersView() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-4">
-              <span className="text-sm uppercase tracking-widest font-extrabold text-industrial-red font-mono">Why FeX</span>
+              <span className="text-sm tracking-widest font-extrabold text-industrial-red font-mono">Why FeX</span>
               <h2 className="font-display font-extrabold text-dark-navy leading-tight" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.5rem)' }}>
                 More Than A Workplace.<br />A Place To Build Your Legacy.
               </h2>
@@ -281,9 +281,12 @@ export default function CareersView() {
             <p className="text-slate-500 text-sm leading-relaxed">
               Send your resume along with your current designation, years of experience, and preferred function to our careers team.
             </p>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              Write one line - to send less than 60 sec video about yourself and work experience along with CV.
-            </p>
+            <div className="inline-flex items-center gap-2.5 bg-red-50 border border-industrial-red/30 rounded-full px-5 py-2.5 mx-auto">
+              <span className="w-2 h-2 rounded-full bg-industrial-red shrink-0 animate-pulse"></span>
+              <p className="text-industrial-red text-xs sm:text-sm font-bold leading-snug">
+                Recommended: Send a less than 60 sec video about yourself and work experience along with your CV.
+              </p>
+            </div>
             <div className="bg-slate-50 border border-slate-200 rounded-lg p-8 space-y-4">
               <Mail className="text-industrial-red mx-auto" size={28} />
               <p className="text-slate-500 text-sm">Email your CV to</p>
@@ -322,26 +325,6 @@ export default function CareersView() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── BUILD SOMETHING THAT LASTS ── */}
-      <section className="bg-brand-primary py-16">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-          <div className="space-y-4 max-w-xl">
-            <h2 className="font-display font-extrabold text-white text-2xl md:text-3xl uppercase tracking-wide">Build Something That Lasts</h2>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              The products we manufacture become part of critical infrastructure, engineering systems, and industrial applications around the world. The people who build these products deserve opportunities that are equally meaningful.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-4 shrink-0">
-            <button
-              onClick={() => scrollTo(opportunitiesRef)}
-              className="bg-transparent text-white font-sans text-xs tracking-widest uppercase font-extrabold py-3.5 px-7 border-2 border-white hover:bg-white hover:text-brand-primary transition-all duration-200"
-            >
-              Explore Opportunities
-            </button>
           </div>
         </div>
       </section>
