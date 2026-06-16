@@ -48,7 +48,7 @@ export default function AboutView() {
             Founded in the year 2008, FeX Foundry Alloys Pvt Ltd has a plant with production capacity of
             25,000 MT/Year located in Sonipat, Haryana for manufacturing various high quality premium
             foundry alloys including various grades of Ferro Silicon Magnesium,
-            Mould Powders, Inoculants and more.
+            Nickel Magnesium, Mould Powders, Inoculants and more.
           </p>
 
           {/* Features */}
