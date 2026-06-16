@@ -311,7 +311,7 @@ export default function CareersView() {
       <section className="bg-slate-50 py-16 border-b border-slate-100">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="text-center mb-10 space-y-2">
-            <h2 className="font-display font-extrabold text-dark-navy text-xl md:text-2xl uppercase tracking-wide">Voices From FeX</h2>
+            <h2 className="font-display font-extrabold text-dark-navy text-xl md:text-2xl tracking-wide">VOICES FROM FeX</h2>
             <div className="w-10 h-1 bg-industrial-red rounded mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
