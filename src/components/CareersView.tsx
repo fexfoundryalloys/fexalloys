@@ -179,7 +179,7 @@ export default function CareersView() {
               <div key={loc.city} className="bg-white border border-slate-200 rounded overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
                 <div className="relative h-44 overflow-hidden">
                   <img
-                    src={`${import.meta.env.BASE_URL}${loc.city === 'DELHI' ? 'delhiofficeimage.avif' : 'infrastructure.jpeg'}`}
+                    src={`${import.meta.env.BASE_URL}${loc.city === 'DELHI' ? 'delhiofficeimage.avif' : loc.city === 'SONIPAT' ? 'sonipatofficeimage.png' : 'infrastructure.jpeg'}`}
                     alt={loc.city}
                     className="w-full h-full object-cover"
                   />
