@@ -281,6 +281,9 @@ export default function CareersView() {
             <p className="text-slate-500 text-sm leading-relaxed">
               Send your resume along with your current designation, years of experience, and preferred function to our careers team.
             </p>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              Write one line - to send less than 60 sec video about yourself and work experience along with CV.
+            </p>
             <div className="bg-slate-50 border border-slate-200 rounded-lg p-8 space-y-4">
               <Mail className="text-industrial-red mx-auto" size={28} />
               <p className="text-slate-500 text-sm">Email your CV to</p>
